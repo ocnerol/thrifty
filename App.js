@@ -5,14 +5,14 @@ import {
   View,
   SafeAreaView,
   Image,
-  TouchableOpacity,
+  TouchableHighlight,
 } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello React Native</Text>
-      <TouchableOpacity onPress={() => console.log("Image tapped")}>
+      <TouchableHighlight onPress={() => console.log("Image tapped")}>
         <Image
           source={{
             width: 200, // specifying width and height is necessary for remote URIs
@@ -20,7 +20,7 @@ export default function App() {
             uri: "https://picsum.photos/200/300",
           }}
         />
-      </TouchableOpacity>
+      </TouchableHighlight>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
