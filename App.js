@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   StyleSheet,
   SafeAreaView,
   Button,
@@ -8,6 +9,7 @@ import {
 } from "react-native";
 
 export default function App() {
+  console.log(`${Platform.OS} ${JSON.stringify(Dimensions.get("screen"))}`);
   return (
     <SafeAreaView style={styles.container}>
       <View
