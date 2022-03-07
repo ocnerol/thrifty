@@ -1,5 +1,4 @@
 import {
-  Dimensions,
   StyleSheet,
   SafeAreaView,
   Button,
@@ -7,9 +6,10 @@ import {
   StatusBar,
   View,
 } from "react-native";
+import { useDimensions } from "@react-native-community/hooks";
 
 export default function App() {
-  console.log(`${Platform.OS} ${JSON.stringify(Dimensions.get("screen"))}`);
+  console.log(`${Platform.OS} ${JSON.stringify(useDimensions())}`);
   return (
     <SafeAreaView style={styles.container}>
       <View
