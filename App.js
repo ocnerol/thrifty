@@ -15,8 +15,8 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "50%", // percentage of screen width
-          height: 70, // density independent pixels
+          width: "100%", // percentage of screen width
+          height: "30%", // density independent pixels
         }}
       ></View>
     </SafeAreaView>
