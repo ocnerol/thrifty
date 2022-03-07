@@ -4,12 +4,19 @@ import {
   Button,
   Platform,
   StatusBar,
+  View,
 } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Button title="Click me!" onPress={() => console.log(text)} />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "50%", // percentage of screen width
+          height: 70, // density independent pixels
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
