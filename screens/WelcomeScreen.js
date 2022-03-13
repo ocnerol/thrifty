@@ -10,10 +10,10 @@ export default function WelcomeScreen() {
       resizeMode="cover"
       source={backgroundImage}
     >
-      {/* <View style={styles.logo}>
-        <Image source={logo} style={{ resizeMode: "contain" }} />
+      <View style={styles.logoAndTagline}>
+        <Image source={logo} style={styles.logo} />
         <Text>{"Sell What You Don't Need"}</Text>
-      </View> */}
+      </View>
       <View style={styles.login}></View>
       <View style={styles.register}></View>
     </ImageBackground>
@@ -26,12 +26,17 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
+  logoAndTagline: {
+    top: 80,
+    height: 150,
+    position: "absolute",
+    alignSelf: "center",
+    alignItems: "center",
+  },
   logo: {
-    // top: ,
-    // position: "absolute",
-    // height: "auto",
-    // width: 300,
-    backgroundColor: "black",
+    resizeMode: "contain",
+    height: "60%",
+    width: "60%",
   },
   login: {
     backgroundColor: "#fc5c65",
