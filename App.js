@@ -10,7 +10,7 @@ export default function App() {
         justifyContent: "center", // main axis
         alignItems: "center", // secondary axis
         flexWrap: "wrap", // when we enable wrapping, the alignItems property
-        // behaves differently: it aligns the items on each line
+        // behaves differently: it aligns the items along the secondary axis within each line
       }}
     >
       <View
