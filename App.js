@@ -8,7 +8,7 @@ export default function App() {
         flex: 1,
         flexDirection: "row", // horizontal
         justifyContent: "center", // main axis
-        alignItems: "baseline", // secondary axis
+        alignItems: "center", // secondary axis
       }}
     >
       <View
@@ -16,6 +16,7 @@ export default function App() {
           backgroundColor: "dodgerblue",
           width: 100,
           height: 300,
+          alignSelf: "flex-start",
         }}
       />
       <View
