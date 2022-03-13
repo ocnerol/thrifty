@@ -1,4 +1,6 @@
-import { SafeAreaView, View, StyleSheet } from "react-native";
+import { SafeAreaView, View, StyleSheet, Image } from "react-native";
+
+const productImage = require("../assets/chair.jpg");
 export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.background}>
@@ -6,14 +8,14 @@ export default function ViewImageScreen() {
         <View style={styles.closeButton} />
         <View style={styles.deleteButton} />
       </View>
-      <View />
+      <Image style={styles.image} source={productImage} />
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "white",
+    backgroundColor: "black",
     flex: 1,
   },
   buttons: {
@@ -32,5 +34,10 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "#4ECDC4",
   },
-  image: {},
+  image: {
+    resizeMode: "contain",
+    width: "100%",
+    height: "100%",
+    bottom: 55,
+  },
 });
