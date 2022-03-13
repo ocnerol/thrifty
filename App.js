@@ -16,7 +16,7 @@ export default function App() {
           backgroundColor: "dodgerblue",
           width: 400,
           height: 100,
-          flexShrink: 1, // if we have overflow, this item can shrink to allow other items to fit on screen/line
+          flex: -1, // if we have overflow, this item can shrink to allow other items to fit on screen/line
         }}
       />
       <View
