@@ -23,7 +23,7 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
   },
   logo: {
@@ -35,12 +35,12 @@ const styles = StyleSheet.create({
   },
   login: {
     backgroundColor: "#fc5c65",
-    height: 100,
+    height: 65,
     width: "100%",
   },
   register: {
     backgroundColor: "#4ECDC4",
-    height: 100,
+    height: 65,
     width: "100%",
   },
 });
