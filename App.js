@@ -9,13 +9,15 @@ export default function App() {
         flexDirection: "row", // horizontal
         justifyContent: "center", // main axis
         alignItems: "center", // secondary axis
+        flexWrap: "wrap", // when we enable wrapping, the alignItems property
+        // behaves differently: it aligns the items on each line
       }}
     >
       <View
         style={{
           backgroundColor: "dodgerblue",
           width: 100,
-          height: 100,
+          height: 300,
         }}
       />
       <View
@@ -30,6 +32,27 @@ export default function App() {
           backgroundColor: "tomato",
           width: 100,
           height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "grey",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "greenyellow",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "red",
+          width: 100,
+          height: 400,
         }}
       />
     </View>
