@@ -17,6 +17,8 @@ export default function App() {
           flexBasis: 100, // if prim. axis = horizontal => set width; if prim. axis = vertical => set height
           // width: 100,
           height: 100,
+          flexGrow: 1, // same as setting flex
+          // but need to manually refresh simulator if going from flexGrow to flex
         }}
       />
       <View
