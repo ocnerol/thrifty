@@ -18,7 +18,7 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: "100%", // percentage of screen width
+          width: "100%",
           height: landscape ? "100%" : "30%",
         }}
       ></View>
