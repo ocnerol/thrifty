@@ -1,13 +1,13 @@
-import { View, StyleSheet } from "react-native";
+import { SafeAreaView, View, StyleSheet } from "react-native";
 export default function ViewImageScreen() {
   return (
-    <View style={styles.background}>
+    <SafeAreaView style={styles.background}>
       <View style={styles.buttons}>
         <View style={styles.closeButton} />
         <View style={styles.deleteButton} />
       </View>
       <View />
-    </View>
+    </SafeAreaView>
   );
 }
 
