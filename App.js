@@ -14,9 +14,8 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: 400,
+          width: 100,
           height: 100,
-          flex: -1, // if we have overflow, this item can shrink to allow other items to fit on screen/line
         }}
       />
       <View
@@ -24,6 +23,7 @@ export default function App() {
           backgroundColor: "gold",
           width: 100,
           height: 100,
+          top: 20, // moves 20 independent pixels from top
         }}
       />
       <View
