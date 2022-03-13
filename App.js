@@ -14,7 +14,8 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          width: 100,
+          flexBasis: 100, // if prim. axis = horizontal => set width; if prim. axis = vertical => set height
+          // width: 100,
           height: 100,
         }}
       />
