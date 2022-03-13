@@ -14,11 +14,9 @@ export default function App() {
       <View
         style={{
           backgroundColor: "dodgerblue",
-          flexBasis: 100, // if prim. axis = horizontal => set width; if prim. axis = vertical => set height
-          // width: 100,
+          width: 400,
           height: 100,
-          flexGrow: 1, // same as setting flex
-          // but need to manually refresh simulator if going from flexGrow to flex
+          flexShrink: 1, // if we have overflow, this item can shrink to allow other items to fit on screen/line
         }}
       />
       <View
