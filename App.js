@@ -23,7 +23,9 @@ export default function App() {
           backgroundColor: "gold",
           width: 100,
           height: 100,
-          top: 20, // moves 20 independent pixels from top
+          top: 20,
+          left: 20,
+          position: "absolute",
         }}
       />
       <View
