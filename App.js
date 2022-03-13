@@ -11,7 +11,7 @@ export default function App() {
         alignItems: "center", // secondary axis
         flexWrap: "wrap", // when we enable wrapping, the alignItems property
         // behaves differently: it aligns the items along the secondary axis within each line
-        alignContent: "center",
+        alignContent: "center", // no effect if wrapping is not used
       }}
     >
       <View
