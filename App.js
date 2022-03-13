@@ -11,6 +11,7 @@ export default function App() {
         alignItems: "center", // secondary axis
         flexWrap: "wrap", // when we enable wrapping, the alignItems property
         // behaves differently: it aligns the items along the secondary axis within each line
+        alignContent: "center",
       }}
     >
       <View
@@ -46,13 +47,6 @@ export default function App() {
           backgroundColor: "greenyellow",
           width: 100,
           height: 100,
-        }}
-      />
-      <View
-        style={{
-          backgroundColor: "red",
-          width: 100,
-          height: 400,
         }}
       />
     </View>
