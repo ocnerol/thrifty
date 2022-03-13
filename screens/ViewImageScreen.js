@@ -13,11 +13,14 @@ export default function ViewImageScreen() {
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "black",
+    backgroundColor: "white",
     flex: 1,
   },
   buttons: {
     flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: 30,
+    marginRight: 30,
   },
   closeButton: {
     width: 50,
