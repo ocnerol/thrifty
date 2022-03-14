@@ -28,13 +28,10 @@ const styles = StyleSheet.create({
   },
   logoAndTagline: {
     top: 80,
-    height: 150,
     position: "absolute",
-    alignSelf: "center",
     alignItems: "center",
   },
   logo: {
-    resizeMode: "contain",
     height: 100,
     width: 100,
   },
