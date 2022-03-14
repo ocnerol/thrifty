@@ -1,5 +1,7 @@
 import { SafeAreaView, View, StyleSheet, Image } from "react-native";
 
+import colors from "../config/colors";
+
 const productImage = require("../assets/chair.jpg");
 
 export default function ViewImageScreen() {
