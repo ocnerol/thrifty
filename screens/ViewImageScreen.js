@@ -1,6 +1,6 @@
 import { SafeAreaView, View, StyleSheet, Image } from "react-native";
 
-const productImage = require("../assets/chair.jpg");
+const productImage = require("../app/assets/chair.jpg");
 export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.background}>

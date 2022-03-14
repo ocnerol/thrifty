@@ -1,7 +1,7 @@
 import { ImageBackground, StyleSheet, View, Text, Image } from "react-native";
 
-const backgroundImage = require("../assets/background.jpg");
-const logo = require("../assets/logo-red.png");
+const backgroundImage = require("../app/assets/background.jpg");
+const logo = require("../app/assets/logo-red.png");
 
 export default function WelcomeScreen() {
   return (
