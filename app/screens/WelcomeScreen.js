@@ -6,7 +6,7 @@ const logo = require("../assets/logo-red.png");
 export default function WelcomeScreen() {
   return (
     <ImageBackground
-      style={styles.container}
+      style={styles.background}
       resizeMode="cover"
       source={backgroundImage}
     >
@@ -21,7 +21,7 @@ export default function WelcomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
