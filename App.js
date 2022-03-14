@@ -3,10 +3,8 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 
 export default function App() {
-  return (
-    <View style={{ flex: 1 }}>
-      {/* <WelcomeScreen /> */}
-      <ViewImageScreen />
-    </View>
-  );
+  return <WelcomeScreen />;
+  {
+    /* <ViewImageScreen /> */
+  }
 }
