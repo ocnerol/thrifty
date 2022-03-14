@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
   closeIcon: {
     width: 50,
     height: 50,
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.primary,
   },
   deleteIcon: {
     width: 50,
     height: 50,
-    backgroundColor: "#4ecdc4",
+    backgroundColor: colors.secondary,
   },
   image: {
     resizeMode: "contain",
