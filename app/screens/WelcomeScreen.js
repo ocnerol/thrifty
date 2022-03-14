@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   register: {
-    backgroundColor: "#4ECDC4",
+    backgroundColor: "#4ecdc4",
     height: 65,
     width: "100%",
   },
