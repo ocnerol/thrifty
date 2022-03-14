@@ -1,12 +1,13 @@
 import { SafeAreaView, View, StyleSheet, Image } from "react-native";
 
 const productImage = require("../assets/chair.jpg");
+
 export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.buttons}>
-        <View style={styles.closeButton} />
-        <View style={styles.deleteButton} />
+        <View style={styles.closeIcon} />
+        <View style={styles.deleteIcon} />
       </View>
       <Image style={styles.image} source={productImage} />
     </SafeAreaView>
@@ -24,15 +25,15 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginRight: 30,
   },
-  closeButton: {
+  closeIcon: {
     width: 50,
     height: 50,
     backgroundColor: "#fc5c65",
   },
-  deleteButton: {
+  deleteIcon: {
     width: 50,
     height: 50,
-    backgroundColor: "#4ECDC4",
+    backgroundColor: "#4ecdc4",
   },
   image: {
     resizeMode: "contain",
