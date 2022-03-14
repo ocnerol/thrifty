@@ -12,7 +12,7 @@ export default function WelcomeScreen() {
     >
       <View style={styles.logoAndTagline}>
         <Image source={logo} style={styles.logo} />
-        <Text>{"Sell What You Don't Need"}</Text>
+        <Text>Sell What You Don't Need</Text>
       </View>
       <View style={styles.login}></View>
       <View style={styles.register}></View>
@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     resizeMode: "contain",
-    height: "60%",
-    width: "60%",
+    height: 100,
+    width: 100,
   },
   login: {
     backgroundColor: "#fc5c65",
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   register: {
-    backgroundColor: "#4ecdc4",
+    backgroundColor: "#4ECDC4",
     height: 65,
     width: "100%",
   },
