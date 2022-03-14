@@ -18,7 +18,7 @@ export default function ViewImageScreen() {
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "black",
+    backgroundColor: colors.black,
     flex: 1,
   },
   buttons: {
