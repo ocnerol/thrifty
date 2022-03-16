@@ -4,6 +4,7 @@ import { View, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./app/components/AppText";
+import WelcomeScreenButton from "./app/components/WelcomeScreenButton/WelcomeScreenButton";
 
 export default function App() {
   return (
@@ -14,8 +15,7 @@ export default function App() {
         alignItems: "center",
       }}
     >
-      <MaterialCommunityIcons name="email" size={200} color="dodgerblue" />
-      <AppText>You've got mail!</AppText>
+      <WelcomeScreenButton>LOGIN</WelcomeScreenButton>
     </View>
   );
 }
