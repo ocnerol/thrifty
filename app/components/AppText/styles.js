@@ -1,9 +1,4 @@
-import React from "react";
-import { Text, StyleSheet, Platform } from "react-native";
-
-function AppText({ children }) {
-  return <Text style={styles.text}>{children}</Text>;
-}
+import { StyleSheet, Platform } from "react-native";
 
 const styles = StyleSheet.create({
   fontSize: 18,
@@ -17,9 +12,10 @@ const styles = StyleSheet.create({
       },
       android: {
         fontSize: 28,
-        fontFamily: "Roboto",
+        fontFamily: "monospace",
       },
     }),
   },
 });
-export default AppText;
+
+export default styles;
