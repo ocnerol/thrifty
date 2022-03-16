@@ -16,6 +16,7 @@ function WelcomeScreenButton({ color, children }) {
       color: "white",
       fontWeight: "bold",
       textTransform: "uppercase",
+      fontSize: 15,
     },
   });
 
