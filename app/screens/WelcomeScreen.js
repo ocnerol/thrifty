@@ -16,7 +16,7 @@ export default function WelcomeScreen() {
         <Image source={logo} style={styles.logo} />
         <Text>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.buttonContainer}>
+      <View style={styles.buttonsContainer}>
         <WelcomeScreenButton color="primary">LOGIN</WelcomeScreenButton>
         <WelcomeScreenButton color="secondary">REGISTER</WelcomeScreenButton>
       </View>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
   },
-  buttonContainer: {
+  buttonsContainer: {
     width: "100%",
     marginBottom: 15,
   },
