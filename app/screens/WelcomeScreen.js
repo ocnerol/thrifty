@@ -1,4 +1,5 @@
 import { ImageBackground, StyleSheet, View, Text, Image } from "react-native";
+import AppText from "../components/AppText";
 
 import WelcomeScreenButton from "../components/WelcomeScreenButton";
 
@@ -14,7 +15,7 @@ export default function WelcomeScreen() {
     >
       <View style={styles.logoAndTagline}>
         <Image source={logo} style={styles.logo} />
-        <Text>Sell What You Don't Need</Text>
+        <AppText>Sell What You Don't Need</AppText>
       </View>
       <View style={styles.buttonsContainer}>
         <WelcomeScreenButton color="primary">login</WelcomeScreenButton>
