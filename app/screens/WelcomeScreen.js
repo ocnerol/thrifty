@@ -16,8 +16,10 @@ export default function WelcomeScreen() {
         <Image source={logo} style={styles.logo} />
         <Text>Sell What You Don't Need</Text>
       </View>
-      <WelcomeScreenButton color="primary">LOGIN</WelcomeScreenButton>
-      <WelcomeScreenButton color="secondary">REGISTER</WelcomeScreenButton>
+      <View style={styles.buttonContainer}>
+        <WelcomeScreenButton color="primary">LOGIN</WelcomeScreenButton>
+        <WelcomeScreenButton color="secondary">REGISTER</WelcomeScreenButton>
+      </View>
     </ImageBackground>
   );
 }
@@ -37,14 +39,8 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
   },
-  login: {
-    backgroundColor: "#fc5c65",
-    height: 65,
+  buttonContainer: {
     width: "100%",
-  },
-  register: {
-    backgroundColor: "#4ECDC4",
-    height: 65,
-    width: "100%",
+    marginBottom: 15,
   },
 });
