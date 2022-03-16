@@ -15,6 +15,7 @@ export default function App() {
       }}
     >
       <MaterialCommunityIcons name="email" size={200} color="dodgerblue" />
+      <AppText>You've got mail!</AppText>
     </View>
   );
 }
