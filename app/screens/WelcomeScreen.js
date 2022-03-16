@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     width: "100%",
-    marginBottom: 15,
+    marginBottom: 18,
+    alignItems: "center",
   },
 });

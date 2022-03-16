@@ -6,14 +6,15 @@ function WelcomeScreenButton({ color, children }) {
   const styles = StyleSheet.create({
     button: {
       backgroundColor: colors[color],
-      width: "100%",
+      width: "90%",
       alignItems: "center",
       borderRadius: 100,
       paddingVertical: 12,
+      marginVertical: 6,
     },
     text: {
       color: "white",
-      fontWeight: "600",
+      fontWeight: "bold",
     },
   });
 
