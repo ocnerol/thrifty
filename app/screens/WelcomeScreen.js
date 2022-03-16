@@ -1,4 +1,5 @@
 import { ImageBackground, StyleSheet, View, Text, Image } from "react-native";
+
 import WelcomeScreenButton from "../components/WelcomeScreenButton";
 
 const backgroundImage = require("../assets/background.jpg");
@@ -15,8 +16,8 @@ export default function WelcomeScreen() {
         <Image source={logo} style={styles.logo} />
         <Text>Sell What You Don't Need</Text>
       </View>
-      <WelcomeScreenButton>LOGIN</WelcomeScreenButton>
-      <WelcomeScreenButton>REGISTER</WelcomeScreenButton>
+      <WelcomeScreenButton color="primary">LOGIN</WelcomeScreenButton>
+      <WelcomeScreenButton color="secondary">REGISTER</WelcomeScreenButton>
     </ImageBackground>
   );
 }

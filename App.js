@@ -7,15 +7,5 @@ import AppText from "./app/components/AppText";
 import WelcomeScreenButton from "./app/components/WelcomeScreenButton/WelcomeScreenButton";
 
 export default function App() {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <WelcomeScreenButton>LOGIN</WelcomeScreenButton>
-    </View>
-  );
+  return <WelcomeScreen />;
 }

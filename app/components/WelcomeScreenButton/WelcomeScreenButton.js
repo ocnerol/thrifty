@@ -1,8 +1,22 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
-import styles from "./styles";
+import colors from "../../config/colors";
 
-function WelcomeScreenButton({ children }) {
+function WelcomeScreenButton({ color, children }) {
+  const styles = StyleSheet.create({
+    button: {
+      backgroundColor: colors[color],
+      width: "100%",
+      alignItems: "center",
+      borderRadius: 100,
+      paddingVertical: 12,
+    },
+    text: {
+      color: "white",
+      fontWeight: "600",
+    },
+  });
+
   return (
     <View style={styles.button}>
       <Text style={styles.text}>{children}</Text>
