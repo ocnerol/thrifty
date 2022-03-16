@@ -15,6 +15,7 @@ function WelcomeScreenButton({ color, children }) {
     text: {
       color: "white",
       fontWeight: "bold",
+      textTransform: "uppercase",
     },
   });
 

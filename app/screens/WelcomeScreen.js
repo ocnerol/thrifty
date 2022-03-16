@@ -17,8 +17,8 @@ export default function WelcomeScreen() {
         <Text>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <WelcomeScreenButton color="primary">LOGIN</WelcomeScreenButton>
-        <WelcomeScreenButton color="secondary">REGISTER</WelcomeScreenButton>
+        <WelcomeScreenButton color="primary">login</WelcomeScreenButton>
+        <WelcomeScreenButton color="secondary">register</WelcomeScreenButton>
       </View>
     </ImageBackground>
   );
