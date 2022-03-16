@@ -16,10 +16,7 @@ export default function App() {
           backgroundColor: "dodgerblue",
           width: 100,
           height: 100,
-          shadowColor: "grey",
-          shadowOffset: { width: -10, height: 10 }, // angle or position of shadow
-          shadowOpacity: 1, // 0 no shadow, 1 really dark
-          shadowRadius: 10,
+          elevation: 30,
         }}
       ></View>
     </View>
