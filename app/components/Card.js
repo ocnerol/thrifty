@@ -19,11 +19,11 @@ const styles = StyleSheet.create({
   card: {
     width: "100%",
     height: Platform.OS === "android" ? 350 : 400,
-    backgroundColor: "#fff",
+    backgroundColor: colors.white,
     borderRadius: 15,
   },
   image: {
-    height: "70%",
+    height: 200,
     width: "100%",
     borderWidth: 30,
     borderTopLeftRadius: 15,
