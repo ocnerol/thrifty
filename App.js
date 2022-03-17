@@ -6,23 +6,16 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AppText from "./app/components/AppText";
 import WelcomeScreenButton from "./app/components/WelcomeScreenButton/WelcomeScreenButton";
 import Card from "./app/components/Card";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default function App() {
   return (
-    <View
-      style={{
-        height: 400,
-        backgroundColor: "#f8f4f4",
-        alignItems: "center",
-        paddingHorizontal: 20,
-        paddingTop: 80,
-      }}
-    >
+    <ListingDetailsScreen>
       <Card
         title="Red jacket for sale!"
         subTitle="$100"
         image={require("./app/assets/jacket.jpg")}
       />
-    </View>
+    </ListingDetailsScreen>
   );
 }
