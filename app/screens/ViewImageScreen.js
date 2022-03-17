@@ -10,7 +10,10 @@ export default function ViewImageScreen() {
     <SafeAreaView style={styles.background}>
       <View style={styles.buttons}>
         <MaterialCommunityIcons name="close" style={styles.closeIcon} />
-        <View style={styles.deleteIcon} />
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          style={styles.deleteIcon}
+        />
       </View>
       <Image style={styles.image} source={productImage} />
     </SafeAreaView>
@@ -29,14 +32,14 @@ const styles = StyleSheet.create({
     marginRight: 30,
   },
   closeIcon: {
-    fontSize: 40,
+    fontSize: 35,
     backgroundColor: colors.black,
     color: "white",
   },
   deleteIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: colors.secondary,
+    fontSize: 35,
+    backgroundColor: colors.black,
+    color: "white",
   },
   image: {
     resizeMode: "contain",
