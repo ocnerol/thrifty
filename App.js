@@ -9,13 +9,5 @@ import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default function App() {
-  return (
-    <ListingDetailsScreen>
-      <Card
-        title="Red jacket for sale!"
-        subTitle="$100"
-        image={require("./app/assets/jacket.jpg")}
-      />
-    </ListingDetailsScreen>
-  );
+  return <ViewImageScreen></ViewImageScreen>;
 }
