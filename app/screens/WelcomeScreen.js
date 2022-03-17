@@ -12,7 +12,7 @@ export default function WelcomeScreen() {
       style={styles.background}
       resizeMode="cover"
       source={backgroundImage}
-      blurRadius={8}
+      blurRadius={10}
     >
       <View style={styles.logoAndTagline}>
         <Image source={logo} style={styles.logo} />
