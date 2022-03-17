@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   background: {
     backgroundColor: colors.black,
     flex: 1,
+    paddingTop: Platform.OS === "android" ? 35 : 0,
   },
   buttons: {
     flexDirection: "row",
