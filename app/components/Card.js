@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text, Platform } from "react-native";
+import { View, Image, StyleSheet, Platform } from "react-native";
 import colors from "../config/colors";
 import AppText from "./AppText";
 
@@ -8,8 +8,8 @@ export default function Card(props) {
     <View style={styles.card}>
       <Image style={styles.image} source={image} />
       <View style={styles.titlesContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.subTitle}>{subTitle}</Text>
+        <AppText style={styles.title}>{title}</AppText>
+        <AppText style={styles.subTitle}>{subTitle}</AppText>
       </View>
     </View>
   );
