@@ -18,7 +18,7 @@ export default function Card(props) {
 const styles = StyleSheet.create({
   card: {
     width: "100%",
-    height: Platform.OS === "android" ? 260 : 285,
+    height: Platform.OS === "android" ? 350 : 400,
     backgroundColor: "#fff",
     borderRadius: 15,
   },
@@ -30,18 +30,17 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 15,
   },
   titlesContainer: {
-    padding: Platform.OS === "android" ? 10 : 15,
+    padding: Platform.OS === "android" ? 13 : 18,
   },
   title: {
     fontWeight: "600",
     marginBottom: Platform.OS === "android" ? 4 : 10,
     fontWeight: Platform.OS === "android" ? "bold" : "500",
-    fontFamily: Platform.OS === "ios" ? "Courier" : "Verdana",
-    fontSize: 15,
+    fontSize: 20,
   },
   subTitle: {
     fontWeight: Platform.OS === "android" ? "bold" : "600",
     color: colors.secondary,
-    fontSize: 15,
+    fontSize: 18,
   },
 });
