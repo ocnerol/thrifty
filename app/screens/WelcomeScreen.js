@@ -19,11 +19,7 @@ export default function WelcomeScreen() {
         <AppText>Sell What You Don't Need</AppText>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton
-          title="login"
-          color="primary"
-          onPress={() => console.log("tapped")}
-        />
+        <AppButton title="login" onPress={() => console.log("tapped")} />
         <AppButton
           title="register"
           color="secondary"
