@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
 import colors from "../../config/colors";
 
@@ -21,9 +21,9 @@ function AppButton({ color, title }) {
   });
 
   return (
-    <View style={styles.button}>
+    <TouchableOpacity style={styles.button}>
       <Text style={styles.text}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
