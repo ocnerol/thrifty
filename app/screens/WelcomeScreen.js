@@ -16,7 +16,7 @@ export default function WelcomeScreen() {
     >
       <View style={styles.logoAndTagline}>
         <Image source={logo} style={styles.logo} />
-        <AppText>Sell What You Don't Need</AppText>
+        <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <AppButton title="login" onPress={() => console.log("tapped")} />
@@ -45,6 +45,11 @@ const styles = StyleSheet.create({
     height: 100,
     width: 100,
     marginBottom: 15,
+  },
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    paddingVertical: 5,
   },
   buttonsContainer: {
     width: "100%",
