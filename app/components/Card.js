@@ -21,13 +21,11 @@ const styles = StyleSheet.create({
     height: Platform.OS === "android" ? 350 : 400,
     backgroundColor: colors.white,
     borderRadius: 15,
+    overflow: "hidden",
   },
   image: {
     height: 200,
     width: "100%",
-    borderWidth: 30,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
   },
   titlesContainer: {
     padding: Platform.OS === "android" ? 13 : 18,
