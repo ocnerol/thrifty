@@ -4,10 +4,10 @@ import { SafeAreaView, View, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./app/components/AppText";
-import WelcomeScreenButton from "./app/components/WelcomeScreenButton/WelcomeScreenButton";
+import AppButton from "./app/components/AppButton";
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default function App() {
-  return <ViewImageScreen></ViewImageScreen>;
+  return <WelcomeScreen />;
 }
