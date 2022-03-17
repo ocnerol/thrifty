@@ -1,4 +1,5 @@
 import { SafeAreaView, View, StyleSheet, Image } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 
@@ -8,7 +9,7 @@ export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.buttons}>
-        <View style={styles.closeIcon} />
+        <MaterialCommunityIcons name="close" style={styles.closeIcon} />
         <View style={styles.deleteIcon} />
       </View>
       <Image style={styles.image} source={productImage} />
@@ -28,9 +29,9 @@ const styles = StyleSheet.create({
     marginRight: 30,
   },
   closeIcon: {
-    width: 50,
-    height: 50,
-    backgroundColor: colors.primary,
+    fontSize: 40,
+    backgroundColor: colors.black,
+    color: "white",
   },
   deleteIcon: {
     width: 50,
