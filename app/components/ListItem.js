@@ -7,7 +7,7 @@ function ListItem(props) {
   const { title, subTitle, image } = props;
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/mosh.jpg")} />
+      <Image style={styles.image} source={image} />
       <View style={styles.sellerInfo}>
         <AppText style={styles.title}>{title}</AppText>
         <AppText style={styles.subTitle}>{subTitle}</AppText>
@@ -17,7 +17,7 @@ function ListItem(props) {
 }
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
+    padding: 15,
     flexDirection: "row",
   },
   image: {
