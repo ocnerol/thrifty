@@ -18,7 +18,6 @@ export default function Card(props) {
 const styles = StyleSheet.create({
   card: {
     width: "100%",
-    height: Platform.OS === "android" ? 350 : 400,
     backgroundColor: colors.white,
     borderRadius: 15,
     overflow: "hidden",
@@ -34,7 +33,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginBottom: Platform.OS === "android" ? 4 : 10,
     fontWeight: Platform.OS === "android" ? "bold" : "500",
-    fontSize: 20,
+    fontSize: 18,
   },
   subTitle: {
     fontWeight: Platform.OS === "android" ? "bold" : "600",
