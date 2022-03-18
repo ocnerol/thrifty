@@ -25,8 +25,7 @@ export default function MessagesScreen(props) {
 
   const handleDelete = (message) => {
     // Delete the message from messages array
-    const newMessages = messages.filter((m) => m.id !== message.id);
-    setMessages(newMessages);
+    setMessages(messages.filter((m) => m.id !== message.id));
   };
   return (
     <Screen>
