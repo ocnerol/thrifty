@@ -4,12 +4,9 @@ import AppText from "./AppText";
 import colors from "../config/colors";
 
 function ListItem(props) {
-  const { title, subTitle, image } = props;
+  const { title, subTitle, image, onPress } = props;
   return (
-    <TouchableHighlight
-      underlayColor={colors.light}
-      onPress={() => console.log("tapped")}
-    >
+    <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
       <View style={styles.container}>
         <Image style={styles.image} source={image} />
         <View style={styles.sellerInfo}>
