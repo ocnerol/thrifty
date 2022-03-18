@@ -4,6 +4,7 @@ import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import AccountOptions from "../components/AccountOptions";
 import colors from "../config/colors";
+import ListItemSeparator from "../components/ListItemSeparator";
 
 export default function MyAccountScreen() {
   return (
@@ -17,6 +18,7 @@ export default function MyAccountScreen() {
       />
       <View style={styles.activityContainer}>
         <AccountOptions iconName={"format-list-bulleted"} />
+        <ListItemSeparator />
         <AccountOptions iconName={"email"} />
       </View>
       <AccountOptions iconName={"logout"} />
