@@ -20,11 +20,20 @@ export default function MyAccountScreen() {
         <AccountOptions
           iconName={"format-list-bulleted"}
           color={colors.primary}
+          optionName={"My Listings"}
         />
         <ListItemSeparator />
-        <AccountOptions iconName={"email"} color={colors.secondary} />
+        <AccountOptions
+          iconName={"email"}
+          color={colors.secondary}
+          optionName={"My Messages"}
+        />
       </View>
-      <AccountOptions iconName={"logout"} color={colors.yellow} />
+      <AccountOptions
+        iconName={"logout"}
+        color={colors.yellow}
+        optionName={"Log Out"}
+      />
     </Screen>
   );
 }
