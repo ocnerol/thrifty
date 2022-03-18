@@ -1,5 +1,4 @@
-import { StyleSheet, FlatList, SafeAreaView } from "react-native";
-import Constants from "expo-constants";
+import { StyleSheet, FlatList } from "react-native";
 
 import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
