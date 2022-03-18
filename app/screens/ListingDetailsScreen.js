@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, Text } from "react-native";
 export default function ListingDetailsScreen(props) {
   return (
     <View style={styles.container}>
-      {props.children}
+      <Image style={styles.image} source={require("../assets/jacket.jpg")} />
       <View style={styles.sellerContainer}>
         <Image
           style={styles.sellerPhoto}
@@ -21,6 +21,10 @@ export default function ListingDetailsScreen(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  image: {
+    width: "100%",
+    height: 300,
   },
   sellerContainer: {
     paddingHorizontal: 20,
