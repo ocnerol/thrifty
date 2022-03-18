@@ -8,7 +8,7 @@ import ListItemSeparator from "../components/ListItemSeparator";
 
 export default function MyAccountScreen() {
   return (
-    <Screen color={colors.light}>
+    <Screen style={styles.container}>
       <ListItem
         title={"Mosh Hamedani"}
         subTitle={"programmingwithmosh@gmail.com"}
@@ -39,6 +39,10 @@ export default function MyAccountScreen() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.light,
+    paddingTop: 40,
+  },
   activityContainer: {
     marginVertical: 25,
   },

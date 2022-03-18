@@ -1,20 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 import AppText from "./AppText";
 
 export default function AccountOptions({ iconName, color, optionName }) {
   return (
-    <View style={styles.container}>
-      <View style={[styles.iconContainer, { backgroundColor: color }]}>
-        <MaterialCommunityIcons
-          size={20}
-          color={colors.white}
-          name={iconName}
-        />
+    <TouchableHighlight onPress={() => console.log("tapped!")}>
+      <View style={styles.container}>
+        <View style={[styles.iconContainer, { backgroundColor: color }]}>
+          <MaterialCommunityIcons
+            size={20}
+            color={colors.white}
+            name={iconName}
+          />
+        </View>
+        <AppText style={styles.text}>{optionName}</AppText>
       </View>
-      <AppText style={styles.text}>{optionName}</AppText>
-    </View>
+    </TouchableHighlight>
   );
 }
 
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     backgroundColor: colors.white,
-    padding: 25,
+    padding: 20,
     alignItems: "center",
   },
   iconContainer: {
