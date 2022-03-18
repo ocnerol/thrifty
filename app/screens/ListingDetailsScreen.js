@@ -1,6 +1,7 @@
 import { View, StyleSheet, Image, Text } from "react-native";
 
 import AppText from "../components/AppText";
+import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 
 export default function ListingDetailsScreen(props) {
@@ -11,16 +12,11 @@ export default function ListingDetailsScreen(props) {
         <AppText style={styles.title}>Red jacket for sale</AppText>
         <AppText style={styles.price}>$100</AppText>
       </View>
-      <View style={styles.sellerContainer}>
-        <Image
-          style={styles.sellerPhoto}
-          source={require("../assets/mosh.jpg")}
-        />
-        <View style={styles.sellerInfo}>
-          <Text style={styles.sellerName}>Mosh Hamedani</Text>
-          <Text style={styles.sellerListingCount}>5 Listings</Text>
-        </View>
-      </View>
+      <ListItem
+        image={require("../assets/mosh.jpg")}
+        title="Mosh Hamedani"
+        subTitle="5 Listings"
+      />
     </View>
   );
 }
@@ -45,26 +41,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     marginVertical: 10,
-  },
-  sellerContainer: {
-    paddingHorizontal: 20,
-    flexDirection: "row",
-  },
-  sellerPhoto: {
-    width: 80,
-    height: 80,
-    borderRadius: 50,
-  },
-  sellerInfo: {
-    padding: 5,
-  },
-  sellerName: {
-    fontSize: 16,
-    fontWeight: "300",
-  },
-  sellerListingCount: {
-    paddingTop: 5,
-    fontSize: 15,
-    color: "grey",
   },
 });
