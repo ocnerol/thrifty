@@ -8,11 +8,16 @@ const productImage = require("../assets/chair.jpg");
 export default function ViewImageScreen() {
   return (
     <SafeAreaView style={styles.background}>
-      <MaterialCommunityIcons name="close" style={styles.closeIcon} />
-      <MaterialCommunityIcons
-        name="trash-can-outline"
-        style={styles.deleteIcon}
-      />
+      <View style={styles.closeIcon}>
+        <MaterialCommunityIcons name="close" color="white" size={35} />
+      </View>
+      <View style={styles.deleteIcon}>
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          color="white"
+          size={35}
+        />
+      </View>
       <Image style={styles.image} source={productImage} />
     </SafeAreaView>
   );
@@ -24,17 +29,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   closeIcon: {
-    fontSize: 35,
-    backgroundColor: colors.black,
-    color: "white",
     position: "absolute",
     top: 40,
     left: 30,
   },
   deleteIcon: {
-    fontSize: 35,
-    backgroundColor: colors.black,
-    color: "white",
     position: "absolute",
     top: 40,
     right: 30,
