@@ -13,7 +13,7 @@ export default function AccountOptions({ iconName, color, optionName }) {
           name={iconName}
         />
       </View>
-      <AppText>{optionName}</AppText>
+      <AppText style={styles.text}>{optionName}</AppText>
     </View>
   );
 }
@@ -31,5 +31,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    marginHorizontal: 10,
+    fontSize: 15,
+    fontWeight: "500",
   },
 });
