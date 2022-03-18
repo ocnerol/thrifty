@@ -1,4 +1,5 @@
-import { FlatList } from "react-native";
+import { StyleSheet, FlatList, SafeAreaView } from "react-native";
+import Constants from "expo-constants";
 
 import ListItem from "../components/ListItem";
 
@@ -16,20 +17,26 @@ const messages = [
     image: require("../assets/mosh.jpg"),
   },
 ];
-function MessagesScreen(props) {
+export default function MessagesScreen(props) {
   return (
-    <FlatList
-      data={messages}
-      keyExtractor={(message) => message.id.toString()}
-      renderItem={({ item }) => (
-        <ListItem
-          title={item.title}
-          subTitle={item.description}
-          image={item.image}
-        />
-      )}
-    />
+    <SafeAreaView style={styles.screen}>
+      <FlatList
+        data={messages}
+        keyExtractor={(message) => message.id.toString()}
+        renderItem={({ item }) => (
+          <ListItem
+            title={item.title}
+            subTitle={item.description}
+            image={item.image}
+          />
+        )}
+      />
+    </SafeAreaView>
   );
 }
 
-export default MessagesScreen;
+const styles = StyleSheet.create({
+  screen: {
+    paddingTop: Constants.statusBarHeight,
+  },
+});
