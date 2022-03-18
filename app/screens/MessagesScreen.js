@@ -1,4 +1,4 @@
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, View } from "react-native";
 
 import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
@@ -30,9 +30,16 @@ export default function MessagesScreen(props) {
             image={item.image}
           />
         )}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
       />
     </Screen>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  separator: {
+    width: "100%",
+    height: 1,
+    backgroundColor: "#000",
+  },
+});
