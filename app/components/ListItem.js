@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
@@ -6,13 +6,18 @@ import colors from "../config/colors";
 function ListItem(props) {
   const { title, subTitle, image } = props;
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={image} />
-      <View style={styles.sellerInfo}>
-        <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.subTitle}>{subTitle}</AppText>
+    <TouchableHighlight
+      underlayColor={colors.light}
+      onPress={() => console.log("tapped")}
+    >
+      <View style={styles.container}>
+        <Image style={styles.image} source={image} />
+        <View style={styles.sellerInfo}>
+          <AppText style={styles.title}>{title}</AppText>
+          <AppText style={styles.subTitle}>{subTitle}</AppText>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 }
 const styles = StyleSheet.create({
