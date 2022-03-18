@@ -24,7 +24,7 @@ export default function MyAccountScreen() {
         <ListItemSeparator />
         <AccountOptions iconName={"email"} color={colors.secondary} />
       </View>
-      <AccountOptions iconName={"logout"} />
+      <AccountOptions iconName={"logout"} color={colors.yellow} />
     </Screen>
   );
 }
