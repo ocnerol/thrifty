@@ -39,7 +39,9 @@ export default function ListingsScreen() {
             onPress={() => console.log("Listing selected", item)}
           />
         )}
-        ItemSeparatorComponent={ListItemSeparator}
+        ItemSeparatorComponent={() => (
+          <ListItemSeparator style={styles.separator} />
+        )}
         refreshing={refreshing}
         onRefresh={() => {
           setListings([
@@ -74,5 +76,8 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 20,
+  },
+  separator: {
+    height: 20,
   },
 });
