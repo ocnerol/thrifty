@@ -8,12 +8,12 @@ const messages = [
   {
     id: 1,
     title: "T1",
-    description: "T2",
+    description: "T1",
     image: require("../assets/mosh.jpg"),
   },
   {
     id: 2,
-    title: "T1",
+    title: "T2",
     description: "T2",
     image: require("../assets/mosh.jpg"),
   },
@@ -29,6 +29,7 @@ export default function MessagesScreen(props) {
             title={item.title}
             subTitle={item.description}
             image={item.image}
+            onPress={() => console.log("Message selected", item)}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
