@@ -17,9 +17,12 @@ export default function MyAccountScreen() {
         color={colors.white}
       />
       <View style={styles.activityContainer}>
-        <AccountOptions iconName={"format-list-bulleted"} />
+        <AccountOptions
+          iconName={"format-list-bulleted"}
+          color={colors.primary}
+        />
         <ListItemSeparator />
-        <AccountOptions iconName={"email"} />
+        <AccountOptions iconName={"email"} color={colors.secondary} />
       </View>
       <AccountOptions iconName={"logout"} />
     </Screen>
