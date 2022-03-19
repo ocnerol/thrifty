@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
+import AppButton from "../components/AppButton";
 import AppTextInput from "../components/AppTextInput";
 
 import Screen from "../components/Screen";
 
 export default function LoginScreen() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   return (
     <Screen>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
@@ -12,6 +16,7 @@ export default function LoginScreen() {
         autoCorrect={false}
         icon="email"
         keyboardType="email-address"
+        onChange={(text) => setEmail(text)}
         placeholder="Email"
         textContentType="emailAddress"
       />
@@ -19,10 +24,12 @@ export default function LoginScreen() {
         autoCapitalize="none"
         autoCorrect={false}
         icon="lock"
+        onChange={(text) => setPassword(text)}
         placeholder="Password"
         secureTextEntry
         textContentType="password"
       />
+      <AppButton title="Login" onPress={() => console.log(email + password)} />
     </Screen>
   );
 }
