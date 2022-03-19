@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   detailsContainer: {
     marginLeft: 10,
-    padding: 5,
+    justifyContent: "center",
   },
   title: {
     fontSize: 16,
