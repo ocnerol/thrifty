@@ -10,13 +10,13 @@ const initialListings = [
   {
     id: 1,
     title: "Red jacket for sale",
-    subTitle: "$100",
+    price: 100,
     image: require("../assets/jacket.jpg"),
   },
   {
     id: 2,
     title: "Couch in great condition",
-    subTitle: "$1000",
+    price: 1000,
     image: require("../assets/couch.jpg"),
   },
 ];
@@ -33,7 +33,7 @@ export default function ListingsScreen() {
         renderItem={({ item }) => (
           <Card
             title={item.title}
-            subTitle={item.subTitle}
+            subTitle={"$" + item.price}
             image={item.image}
             onPress={() => console.log("Listing selected", item)}
           />
