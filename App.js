@@ -1,6 +1,6 @@
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
-import { SafeAreaView, View, Text, TextInput } from "react-native";
+import { SafeAreaView, View, Text, TextInput, Switch } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useState } from "react";
 
@@ -18,10 +18,11 @@ import AppTextInput from "./app/components/AppTextInput";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
+  const [isNew, setIsNew] = useState(false);
   console.log(firstName);
   return (
     <Screen>
-      <AppTextInput placeholder={"Username"} icon="email" />
+      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
     </Screen>
   );
 }
