@@ -8,7 +8,6 @@ import {
 
 import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
-import AccountOptions from "../components/AccountOptions";
 import colors from "../config/colors";
 import ListItemSeparator from "../components/ListItemSeparator";
 import Icon from "../components/Icon";
