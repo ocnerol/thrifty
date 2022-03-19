@@ -9,14 +9,14 @@ export default function LoginScreen() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   return (
-    <Screen>
+    <Screen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/logo-red.png")} />
       <AppTextInput
         autoCapitalize="none"
         autoCorrect={false}
         icon="email"
         keyboardType="email-address"
-        onChange={(text) => setEmail(text)}
+        onChangeText={(text) => setEmail(text)}
         placeholder="Email"
         textContentType="emailAddress"
       />
@@ -24,17 +24,20 @@ export default function LoginScreen() {
         autoCapitalize="none"
         autoCorrect={false}
         icon="lock"
-        onChange={(text) => setPassword(text)}
+        onChangeText={(text) => setPassword(text)}
         placeholder="Password"
         secureTextEntry
         textContentType="password"
       />
-      <AppButton title="Login" onPress={() => console.log(email + password)} />
+      <AppButton title="Login" onPress={() => console.log(email, password)} />
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
   logo: {
     width: 80,
     height: 80,
