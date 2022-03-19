@@ -6,6 +6,7 @@ import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"), // label method takes label for displaying errors on this input field
+  name: Yup.string().required().label("Name"),
   password: Yup.string().required().min(4).label("Password"),
 });
 
@@ -13,7 +14,7 @@ export default function RegisterScreen() {
   return (
     <Screen style={styles.container}>
       <AppForm
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "", name: "", password: "" }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
