@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 
 import Card from "../components/Card";
 import ListItemSeparator from "../components/ListItemSeparator";
