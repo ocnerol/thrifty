@@ -15,6 +15,7 @@ import Screen from "./app/components/Screen";
 import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItem";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
@@ -22,7 +23,8 @@ export default function App() {
   console.log(firstName);
   return (
     <Screen>
-      <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
+      <AppPicker icon="apps" placeholder="category" />
+      <AppTextInput icon="email" placeholder="email" />
     </Screen>
   );
 }
