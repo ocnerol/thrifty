@@ -9,7 +9,7 @@ function ListItem(props) {
     title,
     subTitle,
     image,
-    ImageComponent,
+    IconComponent,
     onPress,
     renderRightActions,
     color,
@@ -18,7 +18,7 @@ function ListItem(props) {
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={[styles.container, { backgroundColor: color }]}>
-          {ImageComponent}
+          {IconComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>

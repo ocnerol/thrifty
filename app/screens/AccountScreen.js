@@ -41,7 +41,7 @@ export default function AccountScreen() {
             <ListItem
               title={item.title}
               color={colors.white}
-              ImageComponent={
+              IconComponent={
                 <Icon
                   name={item.icon.name}
                   backgroundColor={item.icon.backgroundColor}
@@ -55,7 +55,7 @@ export default function AccountScreen() {
       <ListItem
         title={"Log Out"}
         color={colors.white}
-        ImageComponent={<Icon name="logout" backgroundColor={colors.yellow} />}
+        IconComponent={<Icon name="logout" backgroundColor={colors.yellow} />}
       />
     </Screen>
   );
