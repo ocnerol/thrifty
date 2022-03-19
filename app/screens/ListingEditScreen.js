@@ -36,9 +36,9 @@ export default function ListingEditScreen() {
     <Screen style={styles.container}>
       <AppForm
         initialValues={{
-          category: categories,
+          category: null,
           description: "",
-          price: 0,
+          price: "",
           title: "",
         }}
         onSubmit={(values) => console.log(values)}
