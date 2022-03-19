@@ -5,9 +5,6 @@ import AppPicker from "./AppPicker";
 
 export default function AppFormPicker({ items, name, placeholder }) {
   const { setFieldValue, values } = useFormikContext();
-  console.log("values:", values);
-  console.log("values[name]:", values[name]);
-  console.log("name:", name);
 
   return (
     <AppPicker
