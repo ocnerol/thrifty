@@ -10,14 +10,9 @@ import {
 } from "../components/forms";
 
 const validationSchema = Yup.object().shape({
-  category: Yup.object().nullable().required().label("Category"),
+  category: Yup.object().required().nullable().label("Category"),
   description: Yup.string().optional().label("Description"),
-  price: Yup.number()
-    .integer()
-    .moreThan(0)
-    .lessThan(10000)
-    .required()
-    .label("Price"),
+  price: Yup.number().min(1).max(10000).required().label("Price"),
   title: Yup.string().required().min(1).label("Title"),
 });
 
