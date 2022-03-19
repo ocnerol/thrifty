@@ -3,6 +3,7 @@ import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import AppFormPicker from "../components/forms/AppFormPicker";
 
 const validationSchema = Yup.object().shape({
   category: Yup.object().nullable().required().label("Category"),
@@ -16,11 +17,31 @@ const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
 });
 
+const categories = [
+  {
+    label: "Furniture",
+    value: 1,
+  },
+  {
+    label: "Clothing",
+    value: 2,
+  },
+  {
+    label: "Cameras",
+    value: 3,
+  },
+];
+
 export default function ListingEditScreen() {
   return (
     <Screen style={styles.container}>
       <AppForm
-        initialValues={{ category: "", description: "", price: 0, title: "" }}
+        initialValues={{
+          category: categories,
+          description: "",
+          price: 0,
+          title: "",
+        }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
@@ -40,13 +61,10 @@ export default function ListingEditScreen() {
           placeholder="Price"
           textContentType="none"
         />
-        <AppFormField
-          autoCapitalize="none"
-          autoCorrect={true}
-          keyboardType="default"
+        <AppFormPicker
           name="category"
+          items={categories}
           placeholder="Category"
-          textContentType="none"
         />
         <AppFormField
           autoCapitalize="none"
