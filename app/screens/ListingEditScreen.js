@@ -48,6 +48,7 @@ export default function ListingEditScreen() {
           autoCapitalize="none"
           autoCorrect={false}
           keyboardType="default"
+          maxLength={255}
           name="title"
           placeholder="Title"
           textContentType="none"
@@ -56,6 +57,7 @@ export default function ListingEditScreen() {
           autoCapitalize="none"
           autoCorrect={false}
           keyboardType="numeric"
+          maxLength={8}
           name="price"
           placeholder="Price"
           textContentType="none"
@@ -69,7 +71,9 @@ export default function ListingEditScreen() {
           autoCapitalize="none"
           autoCorrect={true}
           keyboardType="default"
+          maxLength={255}
           name="description"
+          numberOfLines={3}
           placeholder="Description"
           textContentType="none"
         />
