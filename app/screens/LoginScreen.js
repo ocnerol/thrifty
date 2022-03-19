@@ -2,11 +2,11 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import * as Yup from "yup";
 
 import AppButton from "../components/AppButton";
-import AppFormField from "../components/AppFormField";
-import ErrorMessage from "../components/ErrorMessage";
+import AppFormField from "../components/forms/AppFormField";
+import ErrorMessage from "../components/forms/ErrorMessage";
 import Screen from "../components/Screen";
-import SubmitButton from "../components/SubmitButton";
-import AppForm from "../components/AppForm";
+import SubmitButton from "../components/forms/SubmitButton";
+import AppForm from "../components/forms/AppForm";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"), // label method takes label for displaying errors on this input field
