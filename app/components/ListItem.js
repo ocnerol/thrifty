@@ -5,12 +5,21 @@ import AppText from "./AppText";
 import colors from "../config/colors";
 
 function ListItem(props) {
-  const { title, subTitle, image, onPress, renderRightActions, color } = props;
+  const {
+    title,
+    subTitle,
+    image,
+    ImageComponent,
+    onPress,
+    renderRightActions,
+    color,
+  } = props;
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={[styles.container, { backgroundColor: color }]}>
-          <Image style={styles.image} source={image} />
+          {ImageComponent}
+          {image && <Image style={styles.image} source={image} />}
           <View style={styles.sellerInfo}>
             <AppText style={styles.title}>{title}</AppText>
             <AppText style={styles.subTitle}>{subTitle}</AppText>
