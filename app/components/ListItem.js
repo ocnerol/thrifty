@@ -41,7 +41,7 @@ function ListItem(props) {
 const styles = StyleSheet.create({
   chevron: {
     justifyContent: "center",
-    right: 0,
+    marginLeft: "auto",
   },
   container: {
     padding: 15,
