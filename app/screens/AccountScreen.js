@@ -1,10 +1,34 @@
-import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableHighlight,
+  FlatList,
+} from "react-native";
 
 import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
 import AccountOptions from "../components/AccountOptions";
 import colors from "../config/colors";
 import ListItemSeparator from "../components/ListItemSeparator";
+import Icon from "../components/Icon";
+
+const menuItems = [
+  {
+    title: "My Listings",
+    icon: {
+      name: "format-list-bulleted",
+      backgroundColor: colors.primary,
+    },
+  },
+  {
+    title: "My Messages",
+    icon: {
+      name: "email",
+      backgroundColor: colors.secondary,
+    },
+  },
+];
 
 export default function AccountScreen() {
   return (
@@ -17,16 +41,21 @@ export default function AccountScreen() {
         color={colors.white}
       />
       <View style={styles.activityContainer}>
-        <AccountOptions
-          iconName={"format-list-bulleted"}
-          color={colors.primary}
-          optionName={"My Listings"}
-        />
-        <ListItemSeparator />
-        <AccountOptions
-          iconName={"email"}
-          color={colors.secondary}
-          optionName={"My Messages"}
+        <FlatList
+          data={menuItems}
+          keyExtractor={(menuItem) => menuItem.title}
+          renderItem={({ item }) => (
+            <ListItem
+              title={item.title}
+              color={colors.white}
+              ImageComponent={
+                <Icon
+                  name={item.icon.name}
+                  backgroundColor={item.icon.backgroundColor}
+                />
+              }
+            />
+          )}
         />
       </View>
       <AccountOptions
@@ -41,7 +70,7 @@ export default function AccountScreen() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.light,
-    paddingTop: 40,
+    marginVertical: 20,
   },
   activityContainer: {
     marginVertical: 25,
