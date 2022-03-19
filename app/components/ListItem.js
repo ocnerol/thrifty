@@ -20,7 +20,7 @@ function ListItem(props) {
         <View style={[styles.container, { backgroundColor: color }]}>
           {ImageComponent}
           {image && <Image style={styles.image} source={image} />}
-          <View style={styles.sellerInfo}>
+          <View style={styles.detailsContainer}>
             <AppText style={styles.title}>{title}</AppText>
             <AppText style={styles.subTitle}>{subTitle}</AppText>
           </View>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     height: 70,
     borderRadius: 35,
   },
-  sellerInfo: {
+  detailsContainer: {
     marginLeft: 10,
     padding: 5,
   },
