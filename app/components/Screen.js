@@ -4,7 +4,7 @@ import Constants from "expo-constants";
 export default function Screen({ children, style }) {
   return (
     <SafeAreaView style={[styles.screen, style]}>
-      <View style={style}>{children}</View>
+      <View style={[{ flex: 1 }, style]}>{children}</View>
     </SafeAreaView>
   );
 }
