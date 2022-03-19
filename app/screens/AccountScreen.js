@@ -56,12 +56,13 @@ export default function AccountScreen() {
               }
             />
           )}
+          ItemSeparatorComponent={ListItemSeparator}
         />
       </View>
-      <AccountOptions
-        iconName={"logout"}
-        color={colors.yellow}
-        optionName={"Log Out"}
+      <ListItem
+        title={"Log Out"}
+        color={colors.white}
+        ImageComponent={<Icon name="logout" backgroundColor={colors.yellow} />}
       />
     </Screen>
   );
