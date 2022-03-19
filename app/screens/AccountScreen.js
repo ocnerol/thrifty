@@ -6,7 +6,7 @@ import AccountOptions from "../components/AccountOptions";
 import colors from "../config/colors";
 import ListItemSeparator from "../components/ListItemSeparator";
 
-export default function MyAccountScreen() {
+export default function AccountScreen() {
   return (
     <Screen style={styles.container}>
       <ListItem
