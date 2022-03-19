@@ -15,6 +15,7 @@ function ListItem(props) {
     onPress,
     renderRightActions,
     color,
+    showChevrons,
   } = props;
   return (
     <Swipeable renderRightActions={renderRightActions}>
@@ -26,13 +27,15 @@ function ListItem(props) {
             <AppText style={styles.title}>{title}</AppText>
             {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
-          <View style={styles.chevron}>
-            <MaterialCommunityIcons
-              name="chevron-right"
-              size={18}
-              color={defaultStyles.colors.medium}
-            />
-          </View>
+          {showChevrons && (
+            <View style={styles.chevron}>
+              <MaterialCommunityIcons
+                name="chevron-right"
+                size={18}
+                color={defaultStyles.colors.medium}
+              />
+            </View>
+          )}
         </View>
       </TouchableHighlight>
     </Swipeable>
