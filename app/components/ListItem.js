@@ -1,8 +1,10 @@
 import { StyleSheet, View, Image, TouchableHighlight } from "react-native";
 import Swipeable from "react-native-gesture-handler/Swipeable";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
 import colors from "../config/colors";
+import defaultStyles from "../config/styles";
 
 function ListItem(props) {
   const {
@@ -24,12 +26,23 @@ function ListItem(props) {
             <AppText style={styles.title}>{title}</AppText>
             {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
+          <View style={styles.chevron}>
+            <MaterialCommunityIcons
+              name="chevron-right"
+              size={18}
+              color={defaultStyles.colors.medium}
+            />
+          </View>
         </View>
       </TouchableHighlight>
     </Swipeable>
   );
 }
 const styles = StyleSheet.create({
+  chevron: {
+    justifyContent: "center",
+    right: 0,
+  },
   container: {
     padding: 15,
     flexDirection: "row",
