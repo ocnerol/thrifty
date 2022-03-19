@@ -16,6 +16,7 @@ import Icon from "./app/components/Icon";
 import ListItem from "./app/components/ListItem";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
 
 const categories = [
   {
@@ -33,17 +34,5 @@ const categories = [
 ];
 
 export default function App() {
-  const [category, setCategory] = useState(categories[0]);
-  return (
-    <Screen>
-      <AppPicker
-        selectedItem={category}
-        onSelectItem={(item) => setCategory(item)}
-        icon="apps"
-        placeholder="category"
-        items={categories}
-      />
-      <AppTextInput icon="email" placeholder="email" />
-    </Screen>
-  );
+  return <LoginScreen />;
 }
