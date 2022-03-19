@@ -20,6 +20,15 @@ export default function RegisterScreen() {
         <AppFormField
           autoCapitalize="none"
           autoCorrect={false}
+          icon="account"
+          keyboardType="default"
+          name="name"
+          placeholder="Name"
+          textContentType="name"
+        />
+        <AppFormField
+          autoCapitalize="none"
+          autoCorrect={false}
           icon="email"
           keyboardType="email-address"
           name="email"
