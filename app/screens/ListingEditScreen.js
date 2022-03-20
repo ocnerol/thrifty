@@ -50,6 +50,7 @@ export default function ListingEditScreen() {
           maxLength={8}
           name="price"
           placeholder="Price"
+          width={"30%"}
         />
         <FormPicker items={categories} name="category" placeholder="Category" />
         <FormField
