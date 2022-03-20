@@ -52,7 +52,12 @@ export default function ListingEditScreen() {
           placeholder="Price"
           width={"30%"}
         />
-        <FormPicker items={categories} name="category" placeholder="Category" />
+        <FormPicker
+          items={categories}
+          name="category"
+          placeholder="Category"
+          width={"50%"}
+        />
         <FormField
           maxLength={255}
           multiline
