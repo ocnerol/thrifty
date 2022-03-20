@@ -10,7 +10,7 @@ function AppText({ children, style }) {
       numberOfLines={1}
       ellipsizeMode="tail"
     >
-      dashdshdkhasdhgdshghdjasdhaskdhsahdashdghkjsadakdsadsadsadsadsa
+      {children}
     </Text>
   );
 }
