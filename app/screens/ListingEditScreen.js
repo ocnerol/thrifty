@@ -22,11 +22,35 @@ const categories = [
     value: 1,
   },
   {
-    label: "Clothing",
+    label: "Cars",
     value: 2,
   },
   {
     label: "Cameras",
+    value: 3,
+  },
+  {
+    label: "Games",
+    value: 4,
+  },
+  {
+    label: "Clothing",
+    value: 5,
+  },
+  {
+    label: "Sports",
+    value: 6,
+  },
+  {
+    label: "Movies & Music",
+    value: 3,
+  },
+  {
+    label: "Books",
+    value: 3,
+  },
+  {
+    label: "Other",
     value: 3,
   },
 ];
