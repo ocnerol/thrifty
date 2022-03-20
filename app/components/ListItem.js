@@ -31,7 +31,7 @@ function ListItem(props) {
             <View style={styles.chevron}>
               <MaterialCommunityIcons
                 name="chevron-right"
-                size={18}
+                size={25}
                 color={defaultStyles.colors.medium}
               />
             </View>
@@ -44,7 +44,6 @@ function ListItem(props) {
 const styles = StyleSheet.create({
   chevron: {
     justifyContent: "center",
-    marginLeft: "auto",
   },
   container: {
     padding: 15,
@@ -56,9 +55,9 @@ const styles = StyleSheet.create({
     borderRadius: 35,
   },
   detailsContainer: {
+    flex: 1,
     marginLeft: 10,
     justifyContent: "center",
-    marginRight: 100,
   },
   title: {
     fontSize: 16,
