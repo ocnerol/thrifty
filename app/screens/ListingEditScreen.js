@@ -96,6 +96,7 @@ export default function ListingEditScreen() {
         <FormPicker
           items={categories}
           name="category"
+          numberOfColumns={3}
           PickerItemComponent={CategoryPickerItem}
           placeholder="Category"
           width={"50%"}
