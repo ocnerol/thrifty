@@ -14,16 +14,7 @@ export default function PickerItem({ item, onPress }) {
 }
 
 const styles = StyleSheet.create({
-  gridContainer: {
-    padding: 15,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   text: {
-    justifyContent: "center",
-    alignItems: "center",
     padding: 20,
-    width: "100%",
-    flexWrap: "wrap",
   },
 });
