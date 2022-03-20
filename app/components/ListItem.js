@@ -42,12 +42,10 @@ function ListItem(props) {
   );
 }
 const styles = StyleSheet.create({
-  chevron: {
-    justifyContent: "center",
-  },
   container: {
     padding: 15,
     flexDirection: "row",
+    alignItems: "center",
   },
   image: {
     width: 70,
