@@ -72,7 +72,7 @@ const AppPicker = ({
                 iconColor={item.color}
               />
             )}
-            numColumns={gridStyle ? 3 : 1}
+            // numColumns={gridStyle ? 3 : 1}
           ></FlatList>
         </Screen>
       </Modal>
