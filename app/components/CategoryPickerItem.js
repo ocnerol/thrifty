@@ -7,9 +7,18 @@ export default function CategoryPickerItem({ item, onPress }) {
   return (
     <View style={styles.container}>
       <Icon backgroundColor={item.color} name={item.icon} size={80} />
-      <AppText>{item.label}</AppText>
+      <AppText style={styles.label}>{item.label}</AppText>
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 30,
+    paddingVertical: 15,
+    alignItems: "center",
+  },
+  label: {
+    marginTop: 5,
+  },
+});
