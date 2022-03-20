@@ -5,17 +5,19 @@ import AppText from "./AppText";
 import defaultStyles from "../config/styles";
 import Icon from "./Icon";
 
-export default function PickerItem({ label, onPress, icon, gridStyle }) {
+export default function PickerItem({
+  label,
+  onPress,
+  icon,
+  gridStyle,
+  iconColor,
+}) {
   return (
     <TouchableOpacity onPress={onPress}>
       {gridStyle ? (
         <View style={styles.gridContainer}>
           <View>
-            <Icon
-              name={icon}
-              size={70}
-              backgroundColor={defaultStyles.colors.primary}
-            />
+            <Icon name={icon} size={70} backgroundColor={iconColor} />
           </View>
           <AppText style={styles.text}>{label}</AppText>
         </View>
@@ -28,11 +30,13 @@ export default function PickerItem({ label, onPress, icon, gridStyle }) {
 
 const styles = StyleSheet.create({
   gridContainer: {
-    marginHorizontal: 20,
+    padding: 15,
     justifyContent: "center",
     alignItems: "center",
   },
   text: {
+    justifyContent: "center",
+    alignItems: "center",
     padding: 20,
     width: "100%",
     flexWrap: "wrap",
