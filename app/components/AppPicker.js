@@ -65,11 +65,8 @@ const AppPicker = ({
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
               <PickerItemComponent
-                label={item.label}
+                item={item}
                 onPress={() => itemSelectHandler(item)}
-                gridStyle={gridStyle}
-                icon={item.icon}
-                iconColor={item.color}
               />
             )}
             // numColumns={gridStyle ? 3 : 1}
