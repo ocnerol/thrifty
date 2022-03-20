@@ -8,8 +8,12 @@ export default function Card(props) {
     <View style={styles.card}>
       <Image style={styles.image} source={image} />
       <View style={styles.titlesContainer}>
-        <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.subTitle}>{subTitle}</AppText>
+        <AppText numberOfLines={1} style={styles.title}>
+          {title}
+        </AppText>
+        <AppText numberOfLines={2} style={styles.subTitle}>
+          {subTitle}
+        </AppText>
       </View>
     </View>
   );
