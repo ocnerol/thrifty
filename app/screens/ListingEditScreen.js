@@ -8,6 +8,7 @@ import {
   AppFormPicker as FormPicker,
   SubmitButton,
 } from "../components/forms";
+import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = Yup.object().shape({
   category: Yup.object().required().nullable().label("Category"),
@@ -95,6 +96,7 @@ export default function ListingEditScreen() {
         <FormPicker
           items={categories}
           name="category"
+          PickerItemComponent={CategoryPickerItem}
           placeholder="Category"
           width={"50%"}
           gridStyle={true}
