@@ -21,6 +21,7 @@ const AppPicker = ({
   items,
   gridStyle,
   onSelectItem,
+  PickerItemComponent = PickerItem,
   placeholder,
   selectedItem,
   width,
@@ -63,7 +64,7 @@ const AppPicker = ({
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({ item }) => (
-              <PickerItem
+              <PickerItemComponent
                 label={item.label}
                 onPress={() => itemSelectHandler(item)}
                 gridStyle={gridStyle}
