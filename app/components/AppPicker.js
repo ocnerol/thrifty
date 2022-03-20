@@ -19,6 +19,7 @@ import PickerItem from "./PickerItem";
 const AppPicker = ({
   icon,
   items,
+  gridStyle,
   onSelectItem,
   placeholder,
   selectedItem,
@@ -65,8 +66,10 @@ const AppPicker = ({
               <PickerItem
                 label={item.label}
                 onPress={() => itemSelectHandler(item)}
+                gridStyle={gridStyle}
               />
             )}
+            numColumns={gridStyle ? 3 : 1}
           ></FlatList>
         </Screen>
       </Modal>

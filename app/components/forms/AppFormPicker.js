@@ -4,7 +4,13 @@ import { useFormikContext } from "formik";
 import AppPicker from "../AppPicker";
 import ErrorMessage from "./ErrorMessage";
 
-export default function AppFormPicker({ items, name, placeholder, width }) {
+export default function AppFormPicker({
+  items,
+  name,
+  placeholder,
+  width,
+  gridStyle,
+}) {
   const { errors, setFieldValue, touched, values } = useFormikContext();
 
   return (
@@ -15,6 +21,7 @@ export default function AppFormPicker({ items, name, placeholder, width }) {
         items={items}
         selectedItem={values[name]}
         width={width}
+        gridStyle={gridStyle}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>

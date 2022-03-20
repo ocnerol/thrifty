@@ -43,15 +43,15 @@ const categories = [
   },
   {
     label: "Movies & Music",
-    value: 3,
+    value: 7,
   },
   {
     label: "Books",
-    value: 3,
+    value: 8,
   },
   {
     label: "Other",
-    value: 3,
+    value: 9,
   },
 ];
 
@@ -81,6 +81,7 @@ export default function ListingEditScreen() {
           name="category"
           placeholder="Category"
           width={"50%"}
+          gridStyle={true}
         />
         <FormField
           maxLength={255}
