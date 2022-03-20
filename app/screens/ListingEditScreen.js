@@ -20,46 +20,53 @@ const categories = [
   {
     label: "Furniture",
     icon: "floor-lamp",
+    color: "#fc5c65",
     value: 1,
   },
   {
     label: "Cars",
     icon: "car",
+    color: "#fd9644",
     value: 2,
   },
   {
     label: "Cameras",
     icon: "camera",
+    color: "#fed330",
     value: 3,
   },
   {
     label: "Games",
     icon: "cards",
+    color: "#26de81",
     value: 4,
   },
   {
     label: "Clothing",
     icon: "shoe-heel",
+    color: "#2bcbba",
     value: 5,
   },
   {
     label: "Sports",
     icon: "basketball",
+    color: "#45aaf2",
     value: 6,
   },
   {
     label: "Movies & Music",
     icon: "headphones",
+    color: "#4b7bec",
     value: 7,
   },
   {
     label: "Books",
-    icon: "book",
+    icon: "book-open-outline",
     value: 8,
   },
   {
     label: "Other",
-    icon: "browser-window",
+    icon: "window-maximize",
     value: 9,
   },
 ];
