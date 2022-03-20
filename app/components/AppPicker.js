@@ -67,6 +67,8 @@ const AppPicker = ({
                 label={item.label}
                 onPress={() => itemSelectHandler(item)}
                 gridStyle={gridStyle}
+                icon={item.icon}
+                iconColor={item.color}
               />
             )}
             numColumns={gridStyle ? 3 : 1}
