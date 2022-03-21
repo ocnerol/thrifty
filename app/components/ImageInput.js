@@ -7,6 +7,7 @@ import {
   View,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import defaultStyles from "../config/styles";
 
@@ -34,6 +35,11 @@ export default function ImageInput({ imageUri, onChangeImage }) {
   return (
     <TouchableOpacity style={styles.button} onPress={selectImage}>
       <View style={styles.container}>
+        <MaterialCommunityIcons
+          name="camera"
+          size={40}
+          color={defaultStyles.colors.medium}
+        />
         {/* <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} /> */}
       </View>
     </TouchableOpacity>
@@ -42,9 +48,12 @@ export default function ImageInput({ imageUri, onChangeImage }) {
 
 const styles = StyleSheet.create({
   button: {
-    width: 200,
-    height: 200,
-    backgroundColor: defaultStyles.colors.medium,
+    width: 100,
+    height: 100,
+    backgroundColor: defaultStyles.colors.light,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
   },
   container: {},
 });
