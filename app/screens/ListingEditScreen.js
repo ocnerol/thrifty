@@ -3,9 +3,9 @@ import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import {
-  AppForm,
   AppFormField as FormField,
   AppFormPicker as FormPicker,
+  Form,
   SubmitButton,
 } from "../components/forms";
 import CategoryPickerItem from "../components/CategoryPickerItem";
@@ -75,7 +75,7 @@ const categories = [
 export default function ListingEditScreen() {
   return (
     <Screen style={styles.container}>
-      <AppForm
+      <Form
         initialValues={{
           category: null,
           description: "",
@@ -110,7 +110,7 @@ export default function ListingEditScreen() {
           placeholder="Description"
         />
         <SubmitButton title="Post" />
-      </AppForm>
+      </Form>
     </Screen>
   );
 }
