@@ -33,16 +33,18 @@ export default function ImageInput({ imageUri, onChangeImage }) {
   };
 
   return (
-    <TouchableOpacity style={styles.button} onPress={selectImage}>
-      <View style={styles.container}>
-        <MaterialCommunityIcons
-          name="camera"
-          size={40}
-          color={defaultStyles.colors.medium}
-        />
-        {/* <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} /> */}
-      </View>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
+      <TouchableOpacity style={styles.button} onPress={selectImage}>
+        <View style={styles.container}>
+          <MaterialCommunityIcons
+            name="camera"
+            size={40}
+            color={defaultStyles.colors.medium}
+          />
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 }
 
@@ -55,5 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  container: {},
+  container: {
+    flexDirection: "row",
+  },
 });
