@@ -1,9 +1,31 @@
-import { StyleSheet, View } from "react-native";
+import { useEffect } from "react";
+import { Button, Image, StyleSheet, View } from "react-native";
+import * as ImagePicker from "expo-image-picker";
 
 export default function ImageInput({ imageUri, onChangeImage }) {
+  const requestPermission = async () => {
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!granted)
+      alert(
+        "You need to enable permission to access the media library and location."
+      );
+  };
+  useEffect(() => {
+    requestPermission();
+  }, []);
+
+  const selectImage = async () => {
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync();
+      if (!result.cancelled) onChangeImage(result.uri);
+    } catch (error) {
+      console.log("Error reading an image", error);
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Button title="Select Image" onPress={onChangeImage} />
+      <Button title="Select Image" onPress={selectImage} />
       <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
     </View>
   );
