@@ -25,7 +25,11 @@ export default function ImageInput({ imageUri, onChangeImage }) {
 
   return (
     <View style={styles.container}>
-      <Button title="Select Image" onPress={selectImage} />
+      <Button
+        accessibilityLabel="Select Image button"
+        onPress={selectImage}
+        title="Select Image"
+      />
       <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
     </View>
   );
