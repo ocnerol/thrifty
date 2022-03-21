@@ -1,6 +1,14 @@
 import { useEffect } from "react";
-import { Button, Image, StyleSheet, View } from "react-native";
+import {
+  Button,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import * as ImagePicker from "expo-image-picker";
+
+import defaultStyles from "../config/styles";
 
 export default function ImageInput({ imageUri, onChangeImage }) {
   const requestPermission = async () => {
@@ -24,17 +32,19 @@ export default function ImageInput({ imageUri, onChangeImage }) {
   };
 
   return (
-    <View style={styles.container}>
-      <Button
-        accessibilityLabel="Select Image button"
-        onPress={selectImage}
-        title="Select Image"
-      />
-      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
-    </View>
+    <TouchableOpacity style={styles.button} onPress={selectImage}>
+      <View style={styles.container}>
+        {/* <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} /> */}
+      </View>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
+  button: {
+    width: 200,
+    height: 200,
+    backgroundColor: defaultStyles.colors.medium,
+  },
   container: {},
 });
