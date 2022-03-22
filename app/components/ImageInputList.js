@@ -7,11 +7,9 @@ export default function ImageInputList({
   onAddImage,
 }) {
   const images = imageUris.map((uri) => (
-    <ImageInput
-      key={uri}
-      imageUri={uri}
-      onChangeImage={() => onRemoveImage(uri)}
-    />
+    <View key={uri} style={styles.image}>
+      <ImageInput imageUri={uri} onChangeImage={() => onRemoveImage(uri)} />
+    </View>
   ));
   return (
     <View style={styles.container}>
@@ -24,5 +22,8 @@ export default function ImageInputList({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+  },
+  image: {
+    marginRight: 10,
   },
 });
