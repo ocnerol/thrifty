@@ -1,18 +1,22 @@
 import React from "react";
 import { Button, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Screen from "./app/components/Screen";
+
+const Link = () => {
+  const navigation = useNavigation();
+  return (
+    <Button title="Click" onPress={() => navigation.navigate("TweetDetails")} />
+  );
+};
 
 const Tweets = ({ navigation }) => {
   return (
     <Screen>
       <Text>Tweets</Text>
-      <Button
-        title="View Tweet"
-        onPress={() => navigation.navigate("TweetDetails")}
-      />
+      <Link />
     </Screen>
   );
 };
