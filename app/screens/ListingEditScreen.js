@@ -80,7 +80,9 @@ export default function ListingEditScreen() {
   const getLocation = async () => {
     const { granted } = await Location.requestForegroundPermissionsAsync();
     if (!granted) return;
-    const { coords } = await Location.getLastKnownPositionAsync();
+    const {
+      coords: { latitude, longitude },
+    } = await Location.getLastKnownPositionAsync();
   };
   useEffect(() => {
     getLocation();
