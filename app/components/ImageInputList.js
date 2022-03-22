@@ -16,16 +16,18 @@ export default function ImageInputList({
     </View>
   ));
   return (
-    <ScrollView
-      horizontal
-      ref={scrollView}
-      onContentSizeChange={() => scrollView.current.scrollToEnd()}
-    >
-      <View style={styles.container}>
-        {images}
-        <ImageInput onChangeImage={(uri) => onAddImage(uri)} />
-      </View>
-    </ScrollView>
+    <View>
+      <ScrollView
+        horizontal
+        ref={scrollView}
+        onContentSizeChange={() => scrollView.current.scrollToEnd()}
+      >
+        <View style={styles.container}>
+          {images}
+          <ImageInput onChangeImage={(uri) => onAddImage(uri)} />
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
