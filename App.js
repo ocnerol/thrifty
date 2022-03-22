@@ -41,7 +41,7 @@ const StackNavigator = () => {
       <Stack.Screen
         name="TweetDetails"
         component={TweetDetails}
-        options={{ title: "Tweet Details" }}
+        options={({ route }) => ({ title: route.params.id })}
       />
     </Stack.Navigator>
   );
