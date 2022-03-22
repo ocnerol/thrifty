@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import {
-  Button,
   Image,
   StyleSheet,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
@@ -37,13 +36,13 @@ export default function ImageInput({ imageUri, onChangeImage }) {
       {imageUri ? (
         <Image source={{ uri: imageUri }} style={styles.image} />
       ) : (
-        <TouchableOpacity style={styles.button} onPress={selectImage}>
+        <TouchableWithoutFeedback style={styles.button} onPress={selectImage}>
           <MaterialCommunityIcons
             name="camera"
             size={40}
             color={defaultStyles.colors.medium}
           />
-        </TouchableOpacity>
+        </TouchableWithoutFeedback>
       )}
     </View>
   );
