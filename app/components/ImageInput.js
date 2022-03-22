@@ -34,30 +34,33 @@ export default function ImageInput({ imageUri, onChangeImage }) {
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
-      <TouchableOpacity style={styles.button} onPress={selectImage}>
-        <View style={styles.container}>
+      {imageUri ? (
+        <Image source={{ uri: imageUri }} style={styles.image} />
+      ) : (
+        <TouchableOpacity style={styles.button} onPress={selectImage}>
           <MaterialCommunityIcons
             name="camera"
             size={40}
             color={defaultStyles.colors.medium}
           />
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  button: {
+  container: {
     width: 100,
     height: 100,
     backgroundColor: defaultStyles.colors.light,
     borderRadius: 25,
     justifyContent: "center",
     alignItems: "center",
+    overflow: "hidden",
   },
-  container: {
-    flexDirection: "row",
+  image: {
+    width: "100%",
+    height: "100%",
   },
 });
