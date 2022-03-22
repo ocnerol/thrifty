@@ -12,7 +12,10 @@ export default function FormImagePicker({ name }) {
   };
 
   const handleRemove = (uri) => {
-    setFieldValue(imageUris.filter((imageUri) => imageUri !== uri));
+    setFieldValue(
+      name,
+      imageUris.filter((imageUri) => imageUri !== uri)
+    );
   };
   return (
     <>
