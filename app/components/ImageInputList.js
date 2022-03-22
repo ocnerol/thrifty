@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import ImageInput from "./ImageInput";
 
 export default function ImageInputList({
@@ -12,10 +12,12 @@ export default function ImageInputList({
     </View>
   ));
   return (
-    <View style={styles.container}>
-      {images}
-      <ImageInput onChangeImage={(uri) => onAddImage(uri)} />
-    </View>
+    <ScrollView horizontal>
+      <View style={styles.container}>
+        {images}
+        <ImageInput onChangeImage={(uri) => onAddImage(uri)} />
+      </View>
+    </ScrollView>
   );
 }
 
