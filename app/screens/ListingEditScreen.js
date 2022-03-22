@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
 import * as Location from "expo-location";
@@ -77,12 +77,16 @@ const categories = [
 ];
 
 export default function ListingEditScreen() {
+  const [location, setLocation] = useState();
+
   const getLocation = async () => {
     const { granted } = await Location.requestForegroundPermissionsAsync();
     if (!granted) return;
+
     const {
       coords: { latitude, longitude },
     } = await Location.getLastKnownPositionAsync();
+    setLocation({ latitude, longitude });
   };
   useEffect(() => {
     getLocation();
@@ -98,7 +102,7 @@ export default function ListingEditScreen() {
           price: "",
           title: "",
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => console.log(location)}
         validationSchema={validationSchema}
       >
         <FormImagePicker name="images" />
@@ -117,7 +121,6 @@ export default function ListingEditScreen() {
           PickerItemComponent={CategoryPickerItem}
           placeholder="Category"
           width={"50%"}
-          gridStyle={true}
         />
         <FormField
           maxLength={255}
