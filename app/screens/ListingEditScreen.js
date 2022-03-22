@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
 import * as Location from "expo-location";
+import * as Permissions from "expo-permissions";
 
 import Screen from "../components/Screen";
 import {
@@ -85,9 +86,10 @@ export default function ListingEditScreen() {
 
     const {
       coords: { latitude, longitude },
-    } = await Location.getLastKnownPositionAsync();
+    } = await Location.getCurrentPositionAsync();
     setLocation({ latitude, longitude });
   };
+
   useEffect(() => {
     getLocation();
   }, []);
