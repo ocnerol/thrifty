@@ -21,14 +21,20 @@ export default function ImageInput({ imageUri, onChangeImage }) {
       ]);
   };
   const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality: 0.5,
-    });
-    if (!granted)
-      alert(
-        "You need to enable permission to access the media library and location."
+    try {
+      const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync(
+        {
+          mediaTypes: ImagePicker.MediaTypeOptions.Images,
+          quality: 0.5,
+        }
       );
+      if (!granted)
+        alert(
+          "You need to enable permission to access the media library and location."
+        );
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     requestPermission();
