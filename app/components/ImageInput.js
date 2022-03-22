@@ -11,6 +11,9 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import defaultStyles from "../config/styles";
 
 export default function ImageInput({ imageUri, onChangeImage }) {
+  const handlePress = () => {
+    if (!imageUri) selectImage();
+  };
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!granted)
@@ -33,17 +36,17 @@ export default function ImageInput({ imageUri, onChangeImage }) {
 
   return (
     <View style={styles.container}>
-      {imageUri ? (
-        <Image source={{ uri: imageUri }} style={styles.image} />
-      ) : (
-        <TouchableWithoutFeedback style={styles.button} onPress={selectImage}>
+      <TouchableWithoutFeedback style={styles.button} onPress={handlePress}>
+        {imageUri ? (
+          <Image source={{ uri: imageUri }} style={styles.image} />
+        ) : (
           <MaterialCommunityIcons
             name="camera"
             size={40}
             color={defaultStyles.colors.medium}
           />
-        </TouchableWithoutFeedback>
-      )}
+        )}
+      </TouchableWithoutFeedback>
     </View>
   );
 }
