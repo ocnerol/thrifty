@@ -15,7 +15,10 @@ export default function ImageInput({ imageUri, onChangeImage }) {
     if (!imageUri) selectImage();
   };
   const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      quality: 0.5,
+    });
     if (!granted)
       alert(
         "You need to enable permission to access the media library and location."
