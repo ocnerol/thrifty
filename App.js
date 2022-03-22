@@ -7,6 +7,7 @@ import Screen from "./app/components/Screen";
 
 const Link = () => {
   const navigation = useNavigation();
+
   return (
     <Button title="Click" onPress={() => navigation.navigate("TweetDetails")} />
   );
@@ -16,15 +17,18 @@ const Tweets = ({ navigation }) => {
   return (
     <Screen>
       <Text>Tweets</Text>
-      <Link />
+      <Button
+        title="View Tweet"
+        onPress={() => navigation.navigate("TweetDetails", { id: 1 })}
+      />
     </Screen>
   );
 };
 
-const TweetDetails = ({ navigation }) => {
+const TweetDetails = ({ route }) => {
   return (
     <Screen>
-      <Text>Tweet Details</Text>
+      <Text>Tweet Details {route.params.id}</Text>
     </Screen>
   );
 };
