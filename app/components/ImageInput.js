@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import {
+  Alert,
   Image,
   StyleSheet,
   TouchableWithoutFeedback,
@@ -13,6 +14,11 @@ import defaultStyles from "../config/styles";
 export default function ImageInput({ imageUri, onChangeImage }) {
   const handlePress = () => {
     if (!imageUri) selectImage();
+    else
+      Alert.alert("Delete", "Are you sure you want to delete this image?", [
+        { text: "Yes", onPress: () => onChangeImage(null) },
+        { text: "No" },
+      ]);
   };
   const requestPermission = async () => {
     const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync({
