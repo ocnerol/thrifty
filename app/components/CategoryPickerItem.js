@@ -8,8 +8,8 @@ export default function CategoryPickerItem({ item, onPress }) {
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress}>
         <Icon backgroundColor={item.color} name={item.icon} size={80} />
-        <AppText style={styles.label}>{item.label}</AppText>
       </TouchableOpacity>
+      <AppText style={styles.label}>{item.label}</AppText>
     </View>
   );
 }
