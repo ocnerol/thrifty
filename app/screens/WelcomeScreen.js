@@ -1,12 +1,11 @@
 import { ImageBackground, StyleSheet, View, Text, Image } from "react-native";
-import AppText from "../components/AppText";
 
 import AppButton from "../components/AppButton";
 
 const backgroundImage = require("../assets/background.jpg");
 const logo = require("../assets/logo-red.png");
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({ toLoginScreen, toRegisterScreen }) {
   return (
     <ImageBackground
       style={styles.background}
@@ -19,11 +18,11 @@ export default function WelcomeScreen() {
         <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title="login" onPress={() => console.log("tapped")} />
+        <AppButton title="login" onPress={toLoginScreen} />
         <AppButton
           title="register"
           color="secondary"
-          onPress={() => console.log("tapped")}
+          onPress={toRegisterScreen}
         />
       </View>
     </ImageBackground>
