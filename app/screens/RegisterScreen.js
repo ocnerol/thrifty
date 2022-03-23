@@ -2,7 +2,8 @@ import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
-import { AppForm, AppFormField, SubmitButton } from "../components/forms";
+import { Form, AppFormField, SubmitButton } from "../components/forms";
+import defaultStyles from "../config/styles";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"), // label method takes label for displaying errors on this input field
@@ -13,7 +14,7 @@ const validationSchema = Yup.object().shape({
 export default function RegisterScreen() {
   return (
     <Screen style={styles.container}>
-      <AppForm
+      <Form
         initialValues={{ email: "", name: "", password: "" }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
@@ -46,7 +47,7 @@ export default function RegisterScreen() {
           textContentType="password"
         />
         <SubmitButton title="Register" />
-      </AppForm>
+      </Form>
     </Screen>
   );
 }
@@ -54,6 +55,7 @@ export default function RegisterScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    backgroundColor: defaultStyles.colors.white,
   },
   logo: {
     width: 80,
