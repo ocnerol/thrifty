@@ -27,24 +27,20 @@ const Tweets = ({ navigation }) => {
   );
 };
 
-const TweetDetails = ({ route }) => {
+const TweetDetails = () => {
   return (
     <Screen>
-      <Text>Tweet Details {route.params.id}</Text>
+      <Text>Tweet Details</Text>
     </Screen>
   );
 };
 
 const Stack = createStackNavigator();
-const StackNavigator = () => {
+const FeedNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Tweets" component={Tweets} />
-      <Stack.Screen
-        name="TweetDetails"
-        component={TweetDetails}
-        options={({ route }) => ({ title: route.params.id })}
-      />
+      <Stack.Screen name="TweetDetails" component={TweetDetails} />
     </Stack.Navigator>
   );
 };
@@ -58,35 +54,9 @@ const Account = () => (
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => (
-  <Tab.Navigator
-    screenOptions={{
-      tabBarActiveBackgroundColor: "tomato",
-      tabBarActiveTintColor: "white",
-      tabBarInactiveBackgroundColor: "#eee",
-      tabBarInactiveTintColor: "black",
-    }}
-  >
-    <Tab.Screen
-      name="Feed"
-      component={Tweets}
-      options={{
-        /* the object passed in as an prop (destructured here) has properties
-            that Navigator suggests given our implementation
-            i.e., suggested size, color, etc.*/
-        tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="home" size={size} color={color} />
-        ),
-      }}
-    />
-    <Tab.Screen
-      name="Account"
-      component={Account}
-      options={{
-        tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="account" size={size} color={color} />
-        ),
-      }}
-    />
+  <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Screen name="Feed" component={FeedNavigator} />
+    <Tab.Screen name="Account" component={Account} />
   </Tab.Navigator>
 );
 
