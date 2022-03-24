@@ -18,6 +18,9 @@ export default function ListingsScreen({ navigation }) {
 
   const loadListings = async () => {
     const response = await listingsApi.getListings();
+    console.log("----------");
+    console.log(response);
+    console.log("----------");
     setListings(response.data);
   };
   return (
@@ -30,7 +33,7 @@ export default function ListingsScreen({ navigation }) {
           <Card
             title={item.title}
             subTitle={"$" + item.price}
-            image={item.image}
+            imageUrl={item.images[0].url}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
@@ -39,26 +42,7 @@ export default function ListingsScreen({ navigation }) {
         )}
         refreshing={refreshing}
         onRefresh={() => {
-          setListings([
-            {
-              id: 3,
-              title: "T3",
-              description: "T3",
-              image: require("../assets/mosh.jpg"),
-            },
-            {
-              id: 4,
-              title: "T4",
-              description: "T4",
-              image: require("../assets/mosh.jpg"),
-            },
-            {
-              id: 5,
-              title: "T5",
-              description: "T5",
-              image: require("../assets/mosh.jpg"),
-            },
-          ]);
+          loadListings;
         }}
       />
     </Screen>
