@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
+import AppButton from "../components/AppButton";
 import Card from "../components/Card";
 import colors from "../config/colors";
 import listingsApi from "../api/listings";
 import ListItemSeparator from "../components/ListItemSeparator";
 import routes from "../navigation/routes";
 import Screen from "../components/Screen";
+import AppText from "../components/AppText";
 
 export default function ListingsScreen({ navigation }) {
   const [listings, setListings] = useState([]);
+  const [error, setError] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
@@ -18,13 +21,18 @@ export default function ListingsScreen({ navigation }) {
 
   const loadListings = async () => {
     const response = await listingsApi.getListings();
-    console.log("----------");
-    console.log(response);
-    console.log("----------");
+    if (!response.ok) return setError(true);
+    setError(false);
     setListings(response.data);
   };
   return (
     <Screen style={styles.screen}>
+      {error && (
+        <View style={styles.error}>
+          <AppText>Couldn't retrieve the listings.</AppText>
+          <AppButton title="Retry" onPress={loadListings} />
+        </View>
+      )}
       <FlatList
         style={styles.container}
         data={listings}
@@ -50,11 +58,14 @@ export default function ListingsScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: colors.light,
-  },
   container: {
     padding: 20,
+  },
+  error: {
+    padding: 10,
+  },
+  screen: {
+    backgroundColor: colors.light,
   },
   separator: {
     height: 20,
