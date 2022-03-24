@@ -3,7 +3,6 @@ import * as Yup from "yup";
 
 import Screen from "../components/Screen";
 import { Form, AppFormField, SubmitButton } from "../components/forms";
-import defaultStyles from "../config/styles";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"), // label method takes label for displaying errors on this input field
@@ -46,7 +45,6 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor: defaultStyles.colors.white,
   },
   logo: {
     width: 80,
