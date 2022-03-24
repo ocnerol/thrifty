@@ -11,6 +11,7 @@ import {
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import FormImagePicker from "../components/forms/FormImagePicker";
 import useLocation from "../hooks/useLocation";
+import defaultStyles from "../config/styles";
 
 const validationSchema = Yup.object().shape({
   category: Yup.object().required().nullable().label("Category"),
@@ -124,6 +125,7 @@ export default function ListingEditScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    backgroundColor: defaultStyles.colors.white,
   },
   logo: {
     width: 80,
