@@ -21,7 +21,7 @@ const initialListings = [
   },
 ];
 
-export default function ListingsScreen() {
+export default function ListingsScreen({ navigation }) {
   const [listings, setListings] = useState(initialListings);
   const [refreshing, setRefreshing] = useState(false);
   return (
@@ -35,7 +35,7 @@ export default function ListingsScreen() {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
-            onPress={() => console.log("Listing selected", item)}
+            onPress={() => navigation.navigate("ListingDetails", item)}
           />
         )}
         ItemSeparatorComponent={() => (
