@@ -36,7 +36,6 @@ export default function MessagesScreen(props) {
         renderItem={({ item }) => (
           <ListItem
             title={item.title}
-            showChevrons={true}
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log("Message selected", item)}

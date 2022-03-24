@@ -7,20 +7,12 @@ import colors from "../config/colors";
 import defaultStyles from "../config/styles";
 
 function ListItem(props) {
-  const {
-    title,
-    subTitle,
-    image,
-    IconComponent,
-    onPress,
-    renderRightActions,
-    color,
-    showChevrons,
-  } = props;
+  const { title, subTitle, image, IconComponent, onPress, renderRightActions } =
+    props;
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
-        <View style={[styles.container, { backgroundColor: color }]}>
+        <View style={[styles.container]}>
           {IconComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.detailsContainer}>
@@ -33,15 +25,11 @@ function ListItem(props) {
               </AppText>
             )}
           </View>
-          {showChevrons && (
-            <View style={styles.chevron}>
-              <MaterialCommunityIcons
-                name="chevron-right"
-                size={25}
-                color={defaultStyles.colors.medium}
-              />
-            </View>
-          )}
+          <MaterialCommunityIcons
+            name="chevron-right"
+            size={25}
+            color={defaultStyles.colors.medium}
+          />
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -52,6 +40,7 @@ const styles = StyleSheet.create({
     padding: 15,
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: colors.white,
   },
   image: {
     width: 70,
