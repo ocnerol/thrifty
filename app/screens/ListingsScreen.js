@@ -1,30 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
 import Card from "../components/Card";
-import ListItemSeparator from "../components/ListItemSeparator";
-import Screen from "../components/Screen";
 import colors from "../config/colors";
+import listingsApi from "../api/listings";
+import ListItemSeparator from "../components/ListItemSeparator";
 import routes from "../navigation/routes";
-
-const initialListings = [
-  {
-    id: 1,
-    title: "Red jacket for sale",
-    price: 100,
-    image: require("../assets/jacket.jpg"),
-  },
-  {
-    id: 2,
-    title: "Couch in great condition",
-    price: 1000,
-    image: require("../assets/couch.jpg"),
-  },
-];
+import Screen from "../components/Screen";
 
 export default function ListingsScreen({ navigation }) {
-  const [listings, setListings] = useState(initialListings);
+  const [listings, setListings] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
+
+  useEffect(() => {
+    loadListings();
+  }, []);
+
+  const loadListings = async () => {
+    const response = await listingsApi.getListings();
+    setListings(response.data);
+  };
   return (
     <Screen style={styles.screen}>
       <FlatList
