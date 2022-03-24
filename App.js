@@ -7,6 +7,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import Screen from "./app/components/Screen";
 import navigationTheme from "./app/navigation/navigationTheme";
 import AppNavigator from "./app/navigation/AppNavigatior";
+import AccountNavigator from "./app/navigation/AccountNavigator";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -57,7 +58,7 @@ const Account = () => (
 const TabNavigator = () => (
   <Tab.Navigator screenOptions={{ headerShown: false }}>
     <Tab.Screen name="Feed" component={FeedNavigator} />
-    <Tab.Screen name="Account" component={Account} />
+    <Tab.Screen name="Account" component={AccountNavigator} />
   </Tab.Navigator>
 );
 
