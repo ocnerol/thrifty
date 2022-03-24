@@ -11,7 +11,6 @@ export default function FeedNavigator() {
     <Stack.Navigator
       screenOptions={{
         presentation: "modal",
-        headerShown: false,
       }}
     >
       <Stack.Screen name="Listings" component={ListingsScreen} />
@@ -19,7 +18,6 @@ export default function FeedNavigator() {
         name="ListingDetails"
         component={ListingDetailsScreen}
         options={{
-          presentation: "modal",
           headerShown: false,
         }}
       />
