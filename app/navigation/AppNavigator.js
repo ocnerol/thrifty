@@ -25,8 +25,12 @@ export default function AppNavigator() {
       <Tab.Screen
         name="ListingEdit"
         component={ListingEditScreen}
-        options={{
-          tabBarButton: () => <NewListingButton />,
+        options={({ navigation }) => ({
+          tabBarButton: () => (
+            <NewListingButton
+              onPress={() => navigation.navigate("ListingEdit")}
+            />
+          ),
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="plus-circle"
@@ -34,7 +38,7 @@ export default function AppNavigator() {
               size={size}
             />
           ),
-        }}
+        })}
       />
       <Tab.Screen
         name="Account"
