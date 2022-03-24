@@ -9,6 +9,10 @@ import Screen from "./app/components/Screen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
+import ListingsScreen from "./app/screens/ListingsScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import AccountScreen from "./app/screens/AccountScreen";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -63,35 +67,20 @@ const TabNavigator = () => (
   </Tab.Navigator>
 );
 
-const WelcomeScreenNavigator = () => {
-  const navigation = useNavigation();
-
-  const toLoginScreen = () => navigation.navigate("Login");
-
-  const ToRegisterScreen = () => navigation.navigate("Register");
-
+const AppNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        options={{ headerShown: false }}
-        name="Welcome"
-        component={() => (
-          <WelcomeScreen
-            toLoginScreen={toLoginScreen}
-            toRegisterScreen={ToRegisterScreen}
-          />
-        )}
-      />
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Register" component={RegisterScreen} />
-    </Stack.Navigator>
+    <Tab.Navigator>
+      <Tab.Screen name="Feed" component={WelcomeScreen} />
+      <Tab.Screen name="NewListing" component={ListingEditScreen} />
+      <Tab.Screen name="Account" component={AccountScreen} />
+    </Tab.Navigator>
   );
 };
 
 export default function App() {
   return (
     <NavigationContainer>
-      <WelcomeScreenNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 }
