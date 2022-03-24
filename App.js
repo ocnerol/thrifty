@@ -5,11 +5,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Screen from "./app/components/Screen";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
-import AccountScreen from "./app/screens/AccountScreen";
-import AuthNavigator from "./app/navigation/AuthNavigator";
 import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigatior";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -64,20 +61,10 @@ const TabNavigator = () => (
   </Tab.Navigator>
 );
 
-const AppNavigator = () => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Feed" component={WelcomeScreen} />
-      <Tab.Screen name="NewListing" component={ListingEditScreen} />
-      <Tab.Screen name="Account" component={AccountScreen} />
-    </Tab.Navigator>
-  );
-};
-
 export default function App() {
   return (
     <NavigationContainer theme={navigationTheme}>
-      <AuthNavigator />
+      <AppNavigator />
     </NavigationContainer>
   );
 }
