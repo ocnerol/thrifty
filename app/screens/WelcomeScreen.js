@@ -5,7 +5,7 @@ import AppButton from "../components/AppButton";
 const backgroundImage = require("../assets/background.jpg");
 const logo = require("../assets/logo-red.png");
 
-export default function WelcomeScreen({ toLoginScreen, toRegisterScreen }) {
+export default function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       style={styles.background}
@@ -18,11 +18,11 @@ export default function WelcomeScreen({ toLoginScreen, toRegisterScreen }) {
         <Text style={styles.tagline}>Sell What You Don't Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title="login" onPress={toLoginScreen} />
+        <AppButton title="login" onPress={() => navigation.navigate("Login")} />
         <AppButton
           title="register"
           color="secondary"
-          onPress={toRegisterScreen}
+          onPress={() => navigation.navigate("Register")}
         />
       </View>
     </ImageBackground>
