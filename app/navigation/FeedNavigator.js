@@ -8,13 +8,21 @@ const Stack = createStackNavigator();
 
 export default function FeedNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        presentation: "modal",
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Listings" component={ListingsScreen} />
       <Stack.Screen
-        name="Listings"
-        component={ListingsScreen}
-        options={{ headerShown: false }}
+        name="ListingDetails"
+        component={ListingDetailsScreen}
+        options={{
+          presentation: "modal",
+          headerShown: false,
+        }}
       />
-      <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} />
     </Stack.Navigator>
   );
 }
