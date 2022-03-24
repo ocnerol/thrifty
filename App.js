@@ -6,7 +6,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import Screen from "./app/components/Screen";
 import navigationTheme from "./app/navigation/navigationTheme";
-import AppNavigator from "./app/navigation/AppNavigatior";
+import AppNavigator from "./app/navigation/AppNavigator";
 import AccountNavigator from "./app/navigation/AccountNavigator";
 
 const Stack = createStackNavigator();
