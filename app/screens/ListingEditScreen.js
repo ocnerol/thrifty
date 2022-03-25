@@ -92,10 +92,10 @@ export default function ListingEditScreen() {
       (progress) => setProgress(progress)
     );
     if (!result.ok) {
+      setUploadVisible(false);
       return alert("Could not save the listing.");
     }
 
-    setUploadVisible(false);
     alert("Success!");
   };
 
