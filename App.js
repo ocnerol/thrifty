@@ -1,16 +1,21 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { StyleSheet, View } from "react-native";
 import NetInfo, { useNetInfo } from "@react-native-community/netinfo";
 
 export default function App() {
-  // the netInfo constant does both the subscribing and unsubscribing
-  // to changes in the network connection
-  // so we don't need to have a useEffect with cleanup
-  const netInfo = useNetInfo();
+  const demo = async () => {
+    try {
+      await AsyncStorage.setItem("person", JSON.stringify({ id: 1 }));
 
-  const unsubscribe = NetInfo.addEventListener((netInfo) =>
-    console.log(netInfo)
-  );
+      const value = await AsyncStorage.getItem("person");
+      const person = JSON.parse(value);
+      console.log(person);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  demo();
   return <View style={styles.container}></View>;
 }
 
