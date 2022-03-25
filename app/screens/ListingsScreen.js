@@ -39,8 +39,8 @@ export default function ListingsScreen({ navigation }) {
           <AppButton title="Retry" onPress={loadListings} />
         </View>
       )}
-      <ActivityIndicator visible={true} />
-      {/* <FlatList
+      <ActivityIndicator visible={loading} />
+      <FlatList
         style={styles.container}
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
@@ -59,7 +59,7 @@ export default function ListingsScreen({ navigation }) {
         onRefresh={() => {
           loadListings;
         }}
-      /> */}
+      />
     </Screen>
   );
 }
