@@ -10,27 +10,21 @@ import ListItemSeparator from "../components/ListItemSeparator";
 import routes from "../navigation/routes";
 import Screen from "../components/Screen";
 import AppText from "../components/AppText";
+import useApi from "../hooks/useApi";
 
 export default function ListingsScreen({ navigation }) {
-  const [listings, setListings] = useState([]);
-  const [error, setError] = useState(false);
+  const {
+    data: listings,
+    error,
+    loading,
+    request: loadListings,
+  } = useApi(listingsApi.getListings);
   const [refreshing, setRefreshing] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadListings();
   }, []);
 
-  const loadListings = async () => {
-    setLoading(true);
-    const response = await listingsApi.getListings();
-    setLoading(false);
-
-    if (!response.ok) return setError(true);
-
-    setError(false);
-    setListings(response.data);
-  };
   return (
     <Screen style={styles.screen}>
       {error && (
