@@ -5,12 +5,14 @@ import TextInput from "../TextInput";
 import ErrorMessage from "./ErrorMessage";
 
 export default function AppFormField({ name, ...otherProps }) {
-  const { setFieldTouched, handleChange, errors, touched } = useFormikContext();
+  const { setFieldTouched, setFieldValue, errors, touched, values } =
+    useFormikContext();
   return (
     <>
       <TextInput
         onBlur={() => setFieldTouched(name)}
-        onChangeText={handleChange(name)} // "email" comes from name of key in initialValues obj
+        onChangeText={(text) => setFieldValue(name, text)}
+        value={values[name]}
         {...otherProps}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
