@@ -1,4 +1,5 @@
-import { Image, StyleSheet } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
@@ -79,8 +80,11 @@ const categories = [
 
 export default function ListingEditScreen() {
   const location = useLocation();
+  const [uploadVisible, setUploadVisible] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const handleSubmit = async (listing) => {
+    setUploadVisible(true);
     const result = await listingsApi.addListing(
       { ...listing, location },
       (progress) => console.log(progress)
@@ -88,6 +92,7 @@ export default function ListingEditScreen() {
     if (!result.ok) {
       return alert("Could not save the listing.");
     }
+    setUploadVisible(false);
     alert("Success!");
   };
 
