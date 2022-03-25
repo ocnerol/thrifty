@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  ActivityIndicator,
+} from "react-native";
 
 import AppButton from "../components/AppButton";
 import Card from "../components/Card";
@@ -38,6 +44,7 @@ export default function ListingsScreen({ navigation }) {
           <AppButton title="Retry" onPress={loadListings} />
         </View>
       )}
+      <ActivityIndicator animating={loading} size="large" />
       <FlatList
         style={styles.container}
         data={listings}
