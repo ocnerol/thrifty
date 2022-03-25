@@ -14,6 +14,7 @@ import FormImagePicker from "../components/forms/FormImagePicker";
 import useLocation from "../hooks/useLocation";
 import defaultStyles from "../config/styles";
 import listingsApi from "../api/listings";
+import UploadScreen from "./UploadScreen";
 
 const validationSchema = Yup.object().shape({
   category: Yup.object().required().nullable().label("Category"),
@@ -87,17 +88,19 @@ export default function ListingEditScreen() {
     setUploadVisible(true);
     const result = await listingsApi.addListing(
       { ...listing, location },
-      (progress) => console.log(progress)
+      (progress) => setProgress(progress)
     );
     if (!result.ok) {
       return alert("Could not save the listing.");
     }
+
     setUploadVisible(false);
     alert("Success!");
   };
 
   return (
     <Screen style={styles.container}>
+      <UploadScreen progress={progress} visible={uploadVisible} />
       <Form
         initialValues={{
           category: null,
