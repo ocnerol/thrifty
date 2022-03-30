@@ -8,10 +8,8 @@ const apiClient = create({
 // to change implementation of the GET method for making a request to the API:
 // e.g., to check the cache if there is no internet connection or if the request fails
 const get = apiClient.get;
-apiClient.get = () => {
-  // do something before
-  get();
-  // do something after
+apiClient.get = async (url, params, axiosConfig) => {
+  const response = await get(url, params, axiosConfig);
 };
 
 export default apiClient;
