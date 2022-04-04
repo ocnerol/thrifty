@@ -17,7 +17,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.primary,
     padding: 14,
-    marginTop: Constants.statusBarHeight,
+    position: "absolute",
+    top: Constants.statusBarHeight,
+    zIndex: 1,
+    width: "100%",
   },
   text: {
     color: colors.white,
