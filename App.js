@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import OfflineNotice from "./app/components/OfflineNotice";
 import AppNavigator from "./app/navigation/AppNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 export default function App() {
   const { isConnected } = useNetInfo();
@@ -16,7 +17,7 @@ export default function App() {
   return (
     <>
       {!isConnectedToInternet && <OfflineNotice />}
-      <NavigationContainer>
+      <NavigationContainer theme={navigationTheme}>
         <AppNavigator />
       </NavigationContainer>
     </>
