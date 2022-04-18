@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 
 import OfflineNotice from "./app/components/OfflineNotice";
@@ -16,6 +16,10 @@ export default function App() {
     if (!token) return;
     setUser(jwtDecode(token));
   };
+
+  useEffect(() => {
+    restoreToken();
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
