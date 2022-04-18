@@ -34,10 +34,6 @@ export default function LoginScreen() {
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        <ErrorMessage
-          error="Invalid email and/or password."
-          visible={loginFailed}
-        />
         <AppFormField
           autoCapitalize="none"
           autoCorrect={false}
@@ -55,6 +51,10 @@ export default function LoginScreen() {
           placeholder="Password"
           secureTextEntry
           textContentType="password"
+        />
+        <ErrorMessage
+          error="Invalid email and/or password."
+          visible={loginFailed}
         />
         <SubmitButton title="Login" />
       </Form>
