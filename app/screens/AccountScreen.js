@@ -5,6 +5,8 @@ import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 import ListItemSeparator from "../components/ListItemSeparator";
 import Icon from "../components/Icon";
+import { useContext } from "react";
+import AuthContext from "../auth/context";
 
 const menuItems = [
   {
@@ -26,11 +28,12 @@ const menuItems = [
 ];
 
 export default function AccountScreen({ navigation }) {
+  const { user } = useContext(AuthContext);
   return (
     <Screen style={styles.container}>
       <ListItem
-        title={"Mosh Hamedani"}
-        subTitle={"programmingwithmosh@gmail.com"}
+        title={user.name}
+        subTitle={user.email}
         image={require("../../app/assets/mosh.jpg")}
         onPress={() => console.log("tapped!")}
         color={colors.white}
