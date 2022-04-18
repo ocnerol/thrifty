@@ -21,6 +21,8 @@ export default function LoginScreen() {
   const handleSubmit = async ({ email, password }) => {
     const result = await authApi.login(email, password);
     if (!result.ok) return setLoginFailed(true);
+    setLoginFailed(false);
+    console.log(result.data);
   };
 
   return (
