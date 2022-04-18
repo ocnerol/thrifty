@@ -2,7 +2,12 @@ import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
-import { Form, AppFormField, SubmitButton } from "../components/forms";
+import {
+  ErrorMessage,
+  Form,
+  AppFormField,
+  SubmitButton,
+} from "../components/forms";
 import authApi from "../api/auth";
 
 const validationSchema = Yup.object().shape({
@@ -11,8 +16,11 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function LoginScreen() {
+  const [loginFailed, setLoginFailed] = useState(false);
+
   const handleSubmit = async ({ email, password }) => {
     const result = await authApi.login(email, password);
+    if (!result.ok) return setLoginFailed(true);
   };
 
   return (
@@ -23,6 +31,10 @@ export default function LoginScreen() {
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
+        <ErrorMessage
+          error="Invalid email and/or password."
+          visible={loginFailed}
+        />
         <AppFormField
           autoCapitalize="none"
           autoCorrect={false}
