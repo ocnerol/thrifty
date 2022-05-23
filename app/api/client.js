@@ -1,9 +1,16 @@
 import { DEV_IP } from '@env';
 import { create } from 'apisauce';
+import authStorage from '../auth/storage';
 import cache from '../utility/cache';
 
 const apiClient = create({
   baseURL: `http://${DEV_IP}:9000/api`,
+});
+
+apiClient.addAsyncRequestTransform(async (request) => {
+  const authToken = await authStorage.getToken();
+  if (!authToken) return;
+  request.headers['x-auth-token'] = authToken;
 });
 
 // to change implementation of the GET method for making a request to the API:
