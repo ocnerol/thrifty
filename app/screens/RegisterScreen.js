@@ -1,51 +1,83 @@
-import { Image, StyleSheet } from "react-native";
-import * as Yup from "yup";
+import { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import * as Yup from 'yup';
 
-import Screen from "../components/Screen";
-import { Form, AppFormField, SubmitButton } from "../components/forms";
+import Screen from '../components/Screen';
+import {
+  Form,
+  AppFormField,
+  SubmitButton,
+  ErrorMessage,
+} from '../components/forms';
+import usersAPI from '../api/users';
+import authAPI from '../api/auth';
+import useAuth from '../auth/useAuth';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().required().email().label("Email"), // label method takes label for displaying errors on this input field
-  name: Yup.string().required().label("Name"),
-  password: Yup.string().required().min(4).label("Password"),
+  email: Yup.string().required().email().label('Email'), // label method takes label for displaying errors on this input field
+  name: Yup.string().required().label('Name'),
+  password: Yup.string().required().min(4).label('Password'),
 });
 
 export default function RegisterScreen() {
+  const [error, setError] = useState(null);
+  const { logIn } = useAuth();
+
+  const handleSubmit = async (userInfo) => {
+    const result = await usersAPI.register(userInfo);
+
+    if (!result.ok) {
+      if (result.data) setError(result.data.error);
+      else {
+        setError('An unexpected error occurred.');
+        console.log(result);
+      }
+      return;
+    }
+
+    const { data: authToken } = await authAPI.login(
+      userInfo.email,
+      userInfo.password
+    );
+    logIn(authToken);
+  };
+
   return (
     <Screen style={styles.container}>
       <Form
-        initialValues={{ email: "", name: "", password: "" }}
-        onSubmit={(values) => console.log(values)}
+        initialValues={{ email: '', name: '', password: '' }}
+        onSubmit={(values) => handleSubmit(values)}
         validationSchema={validationSchema}
       >
+        <ErrorMessage error={error} visible={error} />
         <AppFormField
-          autoCapitalize="none"
+          autoCapitalize='none'
           autoCorrect={false}
-          icon="account"
-          keyboardType="default"
-          name="name"
-          placeholder="Name"
-          textContentType="name"
+          icon='account'
+          keyboardType='default'
+          name='name'
+          placeholder='Name'
+          textContentType='name'
         />
         <AppFormField
-          autoCapitalize="none"
+          autoCapitalize='none'
           autoCorrect={false}
-          icon="email"
-          keyboardType="email-address"
-          name="email"
-          placeholder="Email"
-          textContentType="emailAddress"
+          icon='email'
+          keyboardType='email-address'
+          name='email'
+          placeholder='Email'
+          textContentType='emailAddress'
         />
         <AppFormField
-          autoCapitalize="none"
+          autoCapitalize='none'
           autoCorrect={false}
-          icon="lock"
-          name="password"
-          placeholder="Password"
+          icon='lock'
+          name='password'
+          placeholder='Password'
           secureTextEntry
-          textContentType="password"
+          textContentType='password'
         />
-        <SubmitButton title="Register" />
+        <SubmitButton title='Register' />
       </Form>
     </Screen>
   );
@@ -58,7 +90,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 80,
     height: 80,
-    alignSelf: "center",
+    alignSelf: 'center',
     marginTop: 50,
     marginBottom: 20,
   },
