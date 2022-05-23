@@ -1,35 +1,36 @@
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList } from 'react-native';
 
-import Screen from "../components/Screen";
-import ListItem from "../components/ListItem";
-import colors from "../config/colors";
-import ListItemSeparator from "../components/ListItemSeparator";
-import Icon from "../components/Icon";
-import { useContext } from "react";
-import AuthContext from "../auth/context";
-import authStorage from "../auth/storage";
+import Screen from '../components/Screen';
+import ListItem from '../components/ListItem';
+import colors from '../config/colors';
+import ListItemSeparator from '../components/ListItemSeparator';
+import Icon from '../components/Icon';
+import { useContext } from 'react';
+import AuthContext from '../auth/context';
+import authStorage from '../auth/storage';
+import useAuth from '../auth/useAuth';
 
 const menuItems = [
   {
-    title: "My Listings",
+    title: 'My Listings',
     icon: {
-      name: "format-list-bulleted",
+      name: 'format-list-bulleted',
       backgroundColor: colors.primary,
     },
-    targetScreen: "MyListings",
+    targetScreen: 'MyListings',
   },
   {
-    title: "My Messages",
+    title: 'My Messages',
     icon: {
-      name: "email",
+      name: 'email',
       backgroundColor: colors.secondary,
     },
-    targetScreen: "Messages",
+    targetScreen: 'Messages',
   },
 ];
 
 export default function AccountScreen({ navigation }) {
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser } = useAuth();
 
   const handleLogout = () => {
     setUser(null);
@@ -41,8 +42,8 @@ export default function AccountScreen({ navigation }) {
       <ListItem
         title={user.name}
         subTitle={user.email}
-        image={require("../../app/assets/mosh.jpg")}
-        onPress={() => console.log("tapped!")}
+        image={require('../../app/assets/mosh.jpg')}
+        onPress={() => console.log('tapped!')}
         color={colors.white}
       />
       <View style={styles.activityContainer}>
@@ -66,9 +67,9 @@ export default function AccountScreen({ navigation }) {
         />
       </View>
       <ListItem
-        title={"Log Out"}
+        title={'Log Out'}
         color={colors.white}
-        IconComponent={<Icon name="logout" backgroundColor={colors.yellow} />}
+        IconComponent={<Icon name='logout' backgroundColor={colors.yellow} />}
         onPress={handleLogout}
       />
     </Screen>
