@@ -46,7 +46,7 @@ export default function RegisterScreen() {
     <Screen style={styles.container}>
       <Form
         initialValues={{ email: '', name: '', password: '' }}
-        onSubmit={(values) => handleSubmit(values)}
+        onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         <ErrorMessage error={error} visible={error} />
