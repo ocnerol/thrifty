@@ -1,16 +1,34 @@
-import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import React, { useEffect } from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as Notifications from 'expo-notifications';
+import * as Permissions from 'expo-permissions';
 
-import AccountNavigator from "./AccountNavigator";
-import ListingEditScreen from "../screens/ListingEditScreen";
-import FeedNavigator from "./FeedNavigator";
-import NewListingButton from "./NewListingButton";
-import routes from "./routes";
+import AccountNavigator from './AccountNavigator';
+import ListingEditScreen from '../screens/ListingEditScreen';
+import FeedNavigator from './FeedNavigator';
+import NewListingButton from './NewListingButton';
+import routes from './routes';
 
 const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
+  useEffect(() => {
+    registerForPushNotifications();
+  }, []);
+
+  const registerForPushNotifications = async () => {
+    try {
+      const permission = await Permissions.askAsync(Permissions.NOTIFICATIONS);
+      if (!permission.granted) return;
+
+      const token = await Notifications.getExpoPushTokenAsync();
+      console.log({ token });
+    } catch (error) {
+      console.log('error getting a push token', error);
+    }
+  };
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -18,16 +36,16 @@ export default function AppNavigator() {
       }}
     >
       <Tab.Screen
-        name="Feed"
+        name='Feed'
         component={FeedNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons name='home' color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="ListingEdit"
+        name='ListingEdit'
         component={ListingEditScreen}
         options={({ navigation }) => ({
           tabBarButton: () => (
@@ -37,7 +55,7 @@ export default function AppNavigator() {
           ),
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
-              name="plus-circle"
+              name='plus-circle'
               color={color}
               size={size}
             />
@@ -45,11 +63,11 @@ export default function AppNavigator() {
         })}
       />
       <Tab.Screen
-        name="Account"
+        name='Account'
         component={AccountNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" size={size} color={color} />
+            <MaterialCommunityIcons name='account' size={size} color={color} />
           ),
         }}
       />
