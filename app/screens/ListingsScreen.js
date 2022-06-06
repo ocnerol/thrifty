@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-import ActivityIndicator from "../components/ActivityIndicator";
-import AppButton from "../components/AppButton";
-import Card from "../components/Card";
-import colors from "../config/colors";
-import listingsApi from "../api/listings";
-import ListItemSeparator from "../components/ListItemSeparator";
-import routes from "../navigation/routes";
-import Screen from "../components/Screen";
-import AppText from "../components/AppText";
-import useApi from "../hooks/useApi";
+import ActivityIndicator from '../components/ActivityIndicator';
+import AppButton from '../components/AppButton';
+import Card from '../components/Card';
+import colors from '../config/colors';
+import listingsApi from '../api/listings';
+import ListItemSeparator from '../components/ListItemSeparator';
+import routes from '../navigation/routes';
+import Screen from '../components/Screen';
+import AppText from '../components/AppText';
+import useApi from '../hooks/useApi';
 
 export default function ListingsScreen({ navigation }) {
   const {
@@ -26,36 +26,38 @@ export default function ListingsScreen({ navigation }) {
   }, []);
 
   return (
-    <Screen style={styles.screen}>
-      {error && (
-        <View style={styles.error}>
-          <AppText>Couldn't retrieve the listings.</AppText>
-          <AppButton title="Retry" onPress={loadListings} />
-        </View>
-      )}
+    <>
       <ActivityIndicator visible={loading} />
-      <FlatList
-        style={styles.container}
-        data={listings}
-        keyExtractor={(listing) => listing.id.toString()}
-        renderItem={({ item }) => (
-          <Card
-            title={item.title}
-            subTitle={"$" + item.price}
-            imageUrl={item.images[0].url}
-            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
-            thumbnailUrl={item.images[0].thumbnailUrl}
-          />
+      <Screen style={styles.screen}>
+        {error && (
+          <View style={styles.error}>
+            <AppText>Couldn't retrieve the listings.</AppText>
+            <AppButton title='Retry' onPress={loadListings} />
+          </View>
         )}
-        ItemSeparatorComponent={() => (
-          <ListItemSeparator style={styles.separator} />
-        )}
-        refreshing={refreshing}
-        onRefresh={() => {
-          loadListings;
-        }}
-      />
-    </Screen>
+        <FlatList
+          style={styles.container}
+          data={listings}
+          keyExtractor={(listing) => listing.id.toString()}
+          renderItem={({ item }) => (
+            <Card
+              title={item.title}
+              subTitle={'$' + item.price}
+              imageUrl={item.images[0].url}
+              onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+              thumbnailUrl={item.images[0].thumbnailUrl}
+            />
+          )}
+          ItemSeparatorComponent={() => (
+            <ListItemSeparator style={styles.separator} />
+          )}
+          refreshing={refreshing}
+          onRefresh={() => {
+            loadListings;
+          }}
+        />
+      </Screen>
+    </>
   );
 }
 
