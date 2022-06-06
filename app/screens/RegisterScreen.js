@@ -12,6 +12,7 @@ import {
 import usersAPI from '../api/users';
 import authAPI from '../api/auth';
 import useAuth from '../auth/useAuth';
+import useApi from '../hooks/useApi';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'), // label method takes label for displaying errors on this input field
@@ -20,11 +21,14 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function RegisterScreen() {
+  const registerApi = useApi(usersAPI.register);
+  const loginApi = useApi(authAPI.login);
+
   const [error, setError] = useState(null);
   const { logIn } = useAuth();
 
   const handleSubmit = async (userInfo) => {
-    const result = await usersAPI.register(userInfo);
+    const result = await registerApi.request(userInfo);
 
     if (!result.ok) {
       if (result.data) setError(result.data.error);
@@ -35,7 +39,7 @@ export default function RegisterScreen() {
       return;
     }
 
-    const { data: authToken } = await authAPI.login(
+    const { data: authToken } = await loginApi.request(
       userInfo.email,
       userInfo.password
     );
