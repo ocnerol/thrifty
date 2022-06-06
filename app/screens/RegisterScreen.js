@@ -13,6 +13,7 @@ import usersAPI from '../api/users';
 import authAPI from '../api/auth';
 import useAuth from '../auth/useAuth';
 import useApi from '../hooks/useApi';
+import ActivityIndicator from '../components/ActivityIndicator';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'), // label method takes label for displaying errors on this input field
@@ -48,6 +49,7 @@ export default function RegisterScreen() {
 
   return (
     <Screen style={styles.container}>
+      <ActivityIndicator visible={registerApi.loading || loginApi.loading} />
       <Form
         initialValues={{ email: '', name: '', password: '' }}
         onSubmit={handleSubmit}
