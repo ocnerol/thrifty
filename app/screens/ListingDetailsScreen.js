@@ -25,13 +25,13 @@ export default function ListingDetailsScreen({ route }) {
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>{listing.title}</AppText>
         <AppText style={styles.price}>${listing.price}</AppText>
-      </View>
-      <View style={styles.userContainer}>
-        <ListItem
-          image={require('../assets/mosh.jpg')}
-          title='Mosh Hamedani'
-          subTitle='5 Listings'
-        />
+        <View style={styles.userContainer}>
+          <ListItem
+            image={require('../assets/mosh.jpg')}
+            title='Mosh Hamedani'
+            subTitle='5 Listings'
+          />
+        </View>
         <ContactSellerForm listing={listing} />
       </View>
     </KeyboardAvoidingView>

@@ -1,4 +1,4 @@
-import { Alert, Keyboard, StyleSheet, View } from 'react-native';
+import { Alert, Keyboard, View } from 'react-native';
 import * as Yup from 'yup';
 import * as Notifications from 'expo-notifications';
 
@@ -32,7 +32,7 @@ export default function ContactSellerForm({ listing }) {
   };
 
   return (
-    <View style={styles.contactSellerForm}>
+    <View>
       <Form
         initialValues={{ message: '' }}
         onSubmit={handleSubmit}
@@ -49,8 +49,3 @@ export default function ContactSellerForm({ listing }) {
   );
 }
 
-const styles = StyleSheet.create({
-  contactSellerForm: {
-    padding: 10,
-  },
-});
