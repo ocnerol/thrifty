@@ -14,7 +14,6 @@ export default function ListingDetailsScreen({ route }) {
     <KeyboardAvoidingView
       behavior='position'
       keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}
-      style={styles.container}
     >
       <Image
         style={styles.image}
