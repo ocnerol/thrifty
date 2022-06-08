@@ -1,4 +1,4 @@
-import { KeyboardAvoidingView, View, StyleSheet } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, View, StyleSheet } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
 import * as Yup from 'yup';
 import apiClient from '../api/client';
@@ -23,7 +23,8 @@ export default function ListingDetailsScreen({ route }) {
       listingId: listing.id,
     });
 
-    if (response.ok)
+    if (response.ok) {
+      Keyboard.dismiss();
       Notifications.scheduleNotificationAsync({
         content: {
           title: 'Success',
@@ -31,6 +32,7 @@ export default function ListingDetailsScreen({ route }) {
         },
         trigger: null,
       });
+    }
   };
 
   return (
