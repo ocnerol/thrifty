@@ -1,6 +1,8 @@
 import { View, StyleSheet } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
 import * as Yup from 'yup';
+import apiClient from '../api/client';
+import * as Notifications from 'expo-notifications';
 
 import AppText from '../components/AppText';
 import { AppFormField, Form, SubmitButton } from '../components/forms';
@@ -15,7 +17,21 @@ export default function ListingDetailsScreen({ route }) {
   const listing = route.params;
   console.log(listing.images[0].url);
 
-  const handleSubmit = () => {};
+  const handleSubmit = async ({ message }) => {
+    const response = await apiClient.post('/messages', {
+      message,
+      listingId: listing.id,
+    });
+
+    if (response.ok)
+      Notifications.scheduleNotificationAsync({
+        content: {
+          title: 'Success',
+          body: 'Your message was successfully sent!',
+        },
+        trigger: null,
+      });
+  };
 
   return (
     <View style={styles.container}>
