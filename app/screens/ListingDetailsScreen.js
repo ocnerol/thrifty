@@ -8,7 +8,7 @@ import ListItem from '../components/ListItem';
 import colors from '../config/colors';
 
 const validationSchema = Yup.object().shape({
-  message: Yup.string().required().label('Message'),
+  message: Yup.string().required('You cannot send an empty message'),
 });
 
 export default function ListingDetailsScreen({ route }) {
