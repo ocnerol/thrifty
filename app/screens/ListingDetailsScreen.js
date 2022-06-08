@@ -1,4 +1,4 @@
-import { View, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, View, StyleSheet } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
 import * as Yup from 'yup';
 import apiClient from '../api/client';
@@ -34,7 +34,7 @@ export default function ListingDetailsScreen({ route }) {
   };
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView behavior='position' style={styles.container}>
       <Image
         style={styles.image}
         preview={{ uri: listing.images[0].thumbnailUrl }}
@@ -66,7 +66,7 @@ export default function ListingDetailsScreen({ route }) {
           </Form>
         </View>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
