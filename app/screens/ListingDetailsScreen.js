@@ -1,42 +1,21 @@
-import { Keyboard, KeyboardAvoidingView, View, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, Platform, View, StyleSheet } from 'react-native';
 import { Image } from 'react-native-expo-image-cache';
-import * as Yup from 'yup';
-import apiClient from '../api/client';
-import * as Notifications from 'expo-notifications';
 
 import AppText from '../components/AppText';
-import { AppFormField, Form, SubmitButton } from '../components/forms';
 import ListItem from '../components/ListItem';
 import colors from '../config/colors';
-
-const validationSchema = Yup.object().shape({
-  message: Yup.string().required('You cannot send an empty message'),
-});
+import ContactSellerForm from '../components/ContactSellerForm';
 
 export default function ListingDetailsScreen({ route }) {
   const listing = route.params;
   console.log(listing.images[0].url);
 
-  const handleSubmit = async ({ message }) => {
-    const response = await apiClient.post('/messages', {
-      message,
-      listingId: listing.id,
-    });
-
-    if (response.ok) {
-      Keyboard.dismiss();
-      Notifications.scheduleNotificationAsync({
-        content: {
-          title: 'Success',
-          body: 'Your message was successfully sent!',
-        },
-        trigger: null,
-      });
-    }
-  };
-
   return (
-    <KeyboardAvoidingView behavior='position' style={styles.container}>
+    <KeyboardAvoidingView
+      behavior='position'
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}
+      style={styles.container}
+    >
       <Image
         style={styles.image}
         preview={{ uri: listing.images[0].thumbnailUrl }}
@@ -53,20 +32,7 @@ export default function ListingDetailsScreen({ route }) {
           title='Mosh Hamedani'
           subTitle='5 Listings'
         />
-        <View style={styles.contactSellerForm}>
-          <Form
-            initialValues={{ message: '' }}
-            onSubmit={handleSubmit}
-            validationSchema={validationSchema}
-          >
-            <AppFormField
-              auotCapitalize='none'
-              name='message'
-              placeholder='Message...'
-            />
-            <SubmitButton title='Contact Seller' />
-          </Form>
-        </View>
+        <ContactSellerForm listing={listing} />
       </View>
     </KeyboardAvoidingView>
   );
@@ -96,8 +62,5 @@ const styles = StyleSheet.create({
   },
   userContainer: {
     marginVertical: 10,
-  },
-  contactSellerForm: {
-    padding: 10,
   },
 });
