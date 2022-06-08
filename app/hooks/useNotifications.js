@@ -3,13 +3,14 @@ import * as Notifications from 'expo-notifications';
 
 import expoPushTokens from '../api/expoPushTokens';
 
-export default function useNotifications() {
+export default function useNotifications(notificationListener) {
   useEffect(() => {
     registerForPushNotifications();
 
-    Notifications.addNotificationResponseReceivedListener((notification) => {
-      navigation.navigate('Account');
-    });
+    if (notificationListener)
+      Notifications.addNotificationResponseReceivedListener(
+        notificationListener
+      );
   }, []);
 
   const registerForPushNotifications = async () => {
