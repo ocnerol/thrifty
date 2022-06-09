@@ -40,13 +40,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logoAndTagline: {
-    top: 80,
+    top: 125,
     position: "absolute",
     alignItems: "center",
   },
   logo: {
-    height: 100,
-    width: 100,
+    height: 150,
+    width: 150,
     marginBottom: 15,
   },
   tagline: {
