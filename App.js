@@ -1,6 +1,3 @@
-import Bugsnag from '@bugsnag/expo';
-Bugsnag.start();
-
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
@@ -12,6 +9,9 @@ import navigationTheme from './app/navigation/navigationTheme';
 import AuthContext from './app/auth/context';
 import authStorage from './app/auth/storage';
 import { navigationRef } from './app/navigation/rootNavigation';
+import logger from './app/utility/logger';
+
+logger.start();
 
 export default function App() {
   const [user, setUser] = useState();
