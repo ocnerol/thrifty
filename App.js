@@ -1,3 +1,6 @@
+import Bugsnag from '@bugsnag/expo';
+Bugsnag.start();
+
 import { NavigationContainer } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
